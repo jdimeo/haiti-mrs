@@ -1,0 +1,44 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>org.vwazennou</groupId>
+		<artifactId>HaitiMRS</artifactId>
+		<version>2.9.4-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>HaitiMRS-admin</artifactId>
+	<name>Vwazen Nou EMRS Data/System Administration Scripts</name>
+	<packaging>jar</packaging>
+
+	<properties>
+		<application.mainClass>org.vwazennou.mrs.admin.PostClinicProcessing</application.mainClass>
+		<application.headerType>console</application.headerType>
+		<application.iconWin>src/main/resources/hmrs-admin.ico</application.iconWin>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.vwazennou</groupId>
+			<artifactId>HaitiMRS-model</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+	</dependencies>
+	
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>build-helper-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-shade-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>com.akathist.maven.plugins.launch4j</groupId>
+				<artifactId>launch4j-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+</project>

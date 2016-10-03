@@ -1,0 +1,34 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.datamininglab</groupId>
+		<artifactId>eri-application-base</artifactId>
+		<version>3.0.2</version>
+	</parent>
+
+	<groupId>org.vwazennou</groupId>
+	<artifactId>HaitiMRS</artifactId>
+	<version>2.9.4-SNAPSHOT</version>
+	<name>Vwazen Nou EMRS</name>
+	<description>Electronic Medical Records System for Grace Network clinics in Haiti</description>
+	<packaging>pom</packaging>
+
+	<properties>
+		<scm>swdev.elderresearch.com/mercurial/Affiliated-Code/HaitiMRS</scm>
+		<foundation.version>2.0.2H</foundation.version>
+	</properties>
+	
+	<scm>
+		<connection>scm:hg:http://${scm}</connection>
+		<developerConnection>scm:hg:http://${scm}</developerConnection>
+		<url>http://${scm}</url>
+		<tag>HEAD</tag>
+	</scm>
+
+	<modules>
+		<module>admin</module>
+		<module>model</module>
+		<module>ui</module>
+	</modules>
+</project>

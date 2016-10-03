@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Haiti Medical Records System</title>
+		<style>
+			body {
+				font-family: cambria, serif;
+			}
+			h1 {
+				font-size: medium;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Haiti Medical Records System</h1>
+		<img src="images/pat-summary.png" alt="MRS Software Screenshot" width="400" />
+		
+		<p>This lightweight system is designed to be used to track basic medical
+		records for clinics in areas with very little resources or infrastructure.
+		It was originally designed and built for use in Haiti.</p>
+		<p>Currently, several churches in the <a href="http://www.gracenetwork.org">Grace
+		Network</a> use this system, in parternship with community health workers
+		from <a href="http://www.vwazennou.org">Vwazen Nou</a> to conduct medical clinics
+		for communities around Port-au-Prince several times a year. Please 
+		contact <a href="mailto:haiti.mrs@gmail.com">haiti.mrs@gmail.com</a>
+		with any questions.</p>
+		
+		<h1>Overview</h1>
+		<p>The system contains the following components:</p>
+		<ol>
+			<li>The medical records software itself, available for Windows and Mac, that runs on Java.</li>
+			<li>The database file that stores the medical records.</li>
+			<li>The paper forms used by the health care providers when prescribing treatments for a patient.</li>
+			<li>The directive stickers used to instruct the patients on how to take the medicines.</li>
+		</ol>
+		
+		<h1>1. Medical Records Software</h1>
+		<p>Download and run the following executables to run the latest version
+		of the software:<p>
+		<ul>
+			<li><a href="HaitiMRS-win64.exe">Windows </a> (24 MB)</li>
+			<li><a href="HaitiMRS-win32.exe">Windows (32-bit)</a> (24 MB)</li>
+			<li><a href="HaitiMRS-mac.app.zip">Mac OSX</a> (22 MB)</li>
+		</ul>
+		<p>The only prerequisite is that you have Java 8 or later installed on
+		the computer. Note that Windows may be a 64-bit, but the installed version
+		of Java may be 32-bit.</p>
+		<p>When the program first starts, it tries to find the database file used
+		to store the records. It will prompt you to identify the folder containing
+		a valid database file:<br/>
+		<img src="images/data-folder.png" alt="Image of data path selection dialog" /><br/>
+		Use this dialog to select the directory containing the database file
+		<strong>master.db</strong> (<em>see next section</em>).</p>
+		
+		<h1>2. Database File</h1>
+		<p>The medical records are stored in a <a href="http://www.sqlite.org">SQLite</a>
+		database file on each computer that is running the software. You can
+		download a template database file here:<p>
+		<p><a href="master.db">master.db</a> (1 MB)</p>
+		<p>This file is mostly blank, but contains a snapshot of the FDA's formulary
+		as well as some commonly used "standard" prescriptions (to facilitate
+		fast entry of some of the most common and/or least complex prescriptions).
+		Once you have downloaded this file, select the folder to which you 
+		downloaded the file when you first start the program (<em>see above</em>).</p>
+		<p>The simplest way to use this system is with a single computer writing
+		and reading records from this file. However, the system is designed to
+		also be used across multiple computers concurrently. When the program
+		starts, it copies the master database file to a folder that is unique
+		to the computer and the computer's user. In this way, many computers
+		can be editing the data in their own copies of the database without 
+		affecting the master file (and without requiring an Internet connection).
+		However, you will eventually need to push the changes of a given
+		copy back up to the master so that it can be viewable by everyone else.</p>
+		<p>To publish or push a user's changes back to the master file, download
+		the following two files and run the executable:</p>
+		<ul>
+			<li><a href="HaitiMRS-admin.exe">Merge Tool (Windows)</a> (17MB)</li>
+			<li><a href="logback.xml">Merge Tool Logging Configuration</a> (1 KB)</li>
+		</ul>
+		<p>This tool finds any changes to the data compared to the master, and
+		replicates and saves those changes in the master file, as well as doing
+		some data clean up, like removing duplicates. The details of what this
+		tool does are out of the scope of this document, so please contact
+		<a href="mailto:haiti.mrs@gmail.com">haiti.mrs@gmail.com</a> with any questions.</p>
+		<p>We recommend using a file-syncing service like <strong>Dropbox</strong>,
+		<strong>Box</strong>, <strong>SugarSync</strong>, or <strong>Google Drive</strong>
+		to share, as well as back up, these database files. This allows the
+		person who is managing the database files and running the merge tool
+		to automatically receive everyone's changes in their copies of the
+		database the next time each computer can connect to the Internet.
+		<p>Please note that this file is not password protected and this system
+		does not have any access restrictions to any information stored within it.</p>
+		
+		<h1>3. Patient and Prescription Forms</h1>
+		<p>The software is designed to be used with printed forms for use during
+		a clinic that capture patient information as well as the encounter
+		with the provider. These forms mirror the kind of data captured by
+		each screen in the software:</p>
+		<ul>
+			<li><a href="Patient Information Sheet 2.1.pdf">Patient Information Sheet</a> (78 KB)<br/>
+			This sheet is written in Kreyol since Haitian community health
+			workers are usually performing patient intake.</li>
+			<li><a href="Prescription Sheet English 2.1.pdf">Prescription Sheet</a> (146 KB)<br/>
+			This sheet is broken up into 5 sections:
+			<ul>
+				<li>Vitals and Labs. This section is also in Kreyol since Haitian
+				community health workers are usually helping with vitals.</li>
+				<li>Pre-Bagged Prescriptions. We found it greatly improved the
+				efficiency of the clinic to standardize a few of the most common
+				prescriptions. Providers could quickly prescribe with a few marks
+				and they could be entered into the system with a few clicks. Use
+				of this section is completely optional.</li>
+				<li>Diagnosis Table. This table is a quick reference for the 
+				most common diagnoses, their equivalent translation in Kreyol,
+				and for a abbreviation or code that can be used in the following
+				section.</li>
+				<li>Prescriptions. Providers use this section to prescribe
+				medicines to patients. They are grouped into sections by 
+				medicine type or <em>form</em> (since instructions on how to take
+				the medicine or <em>directives</em> are similar for similar types
+				of medicines)</li>
+				<li>Follow-up. The last section has space for any other comments
+				and to indicate any follow up the patient might require.</li>
+			</ul>
+		</ul>
+		
+		<h1>4. Directives</h1>
+		<p>The directives are stickers that instruct patients on how to take their
+		medicine. These are designed to be easily translated into any language
+		(including future plans for pictorial stickers) but still easy for a
+		provider to use to communicate instructions to the patient. This is
+		achieved by keeping the order and type of "blanks" consistent regardless
+		of the language (in this case, Kreyol). You can download the directive
+		templates here (designed to print on standard 1" x 4" and 2" x 4" 
+		adhesive labels):</p>
+		<p><a href="Directives.zip">Directives</a> (487 KB zipped)</p>
+		
+		<hr/>
+		
+		<h1>Overview of our clinics</h1>
+		<p>The following describes at a high level how this system is used in
+		the clinics we run in parternship with churches in Haiti:</p>
+		<p>First, Haitian community health workers check in patients into the
+		clinic. They have an index (often printed on paper, or if there are
+		enough computers or tablets access to the software directly) of all
+		patients in the system with first name, surname, address, etc.
+		They fill out Patient Information form (<em>Enformasyon Medikal</em>). 
+		If the patient exists in the system, they record the patient's ID at
+		the top of the form.</p>
+		<p>Then, the health workers and/or American volunteers measure the vitals
+		of each patient. They fill out the top section of the Prescription Sheet
+		(<em>Preskripsyon</em>). This form is mainly in Kreyol, but Americans
+		can use the units to know where to fill each vital. Metric or Standard
+		units can be used- the software will automatically convert to metric.</p>
+		<p>Then the patient is seen by the health care provider/doctor. We
+		usually have American doctors working with translators, but we have also
+		partnered with Haitian doctors. Providers usually have a computer with
+		them running the EMR where they can quickly look up existing patients
+		and the summary of their information using the patient ID. They will
+		fill out the rest of the form, prescribing one or more medications.
+		Each prescription consists of a standard "diagnosis code" (from the
+		table at the bottom of the first page of the prescription sheet),
+		a treatment/medicine with quantity/dosage, and instructions on how to
+		take the medicine. Since swallowed pills are the most common, the most
+		prescription "slots" are provided for those kinds of medicines, then
+		chewable pills, drops/liquids, creams, and so on. These instructions
+		have been standardized into "directives"- this facilitates efficient
+		filling of prescriptions by laymen in the pharmacy, and easy translation
+		between English and the language of the patients.</p>
+		<p>The patient's prescription sheet is filled by the pharmacy- we put
+		each medicine in its own Ziploc bag, and affix a sticker with that
+		medicine's instructions to the bag, and then combine all the medicines
+		into one large gallon-size Ziploc. Patients can receive anywhere from a
+		single medication to up to about a dozen in one visit. We treat both
+		acute and chronic conditions, and the chronic patients are the biggest
+		reason why we implemented this EMR.</p>
+		<p>Once the patient's bag of medicines have been prepared, the bag and
+		the sheet are sent to the EMR/data entry. One or more people (Haitian
+		and/or American) are running the software on one or more computers-
+		they create new patients or update the existing patient's basic
+		information from the update form, and then they add each prescription
+		into the system. We find they also function as "Quality Assurance" and
+		double-check the pharmacy- since they have to look up the exact medicine
+		name and are seeing how many pills the patient is receiving, they can
+		often catch errors or if the pharmacy forgot to fill a prescription on
+		the sheet.</p>
+		<p>The medicine is then given to the patient by a native Kreyol speaker
+		who can go through each medicine and explain/show how to take it. Finally,
+		each patient is prayed for before they leave the clinic.</p>
+		<p>Our main goal is enabling our sister Haitian church to do relational
+		evangelism, so every station involves both Americans and trained Haitian
+		health workers that are also members of church so that it's a partnership.
+		We try to make sure each patient feels that they are being cared for and
+		loved by the clinic workers (both Haitian and American) with which they
+		interact. But we also want to make sure the patients are receiving
+		excellent care, which is why we started the EMR. Particularly for chronic
+		patients (like hypertension and diabetes), we wanted to track the effect
+		our care was having over time.</p>
+		<p>Thank you for your interest in our medical records system.</p>
+	</body>
+</html>

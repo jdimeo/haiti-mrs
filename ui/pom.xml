@@ -1,0 +1,28 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>org.vwazennou</groupId>
+		<artifactId>HaitiMRS</artifactId>
+		<version>2.9.4-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>HaitiMRS-ui</artifactId>
+	<name>Vwazen Nou EMRS (UI)</name>
+	<packaging>pom</packaging>
+
+	<properties>
+		<application.mainClass>org.vwazennou.mrs.HaitiMRS</application.mainClass>
+		<application.headerType>gui</application.headerType>
+		<application.iconWin>../core/src/main/resources/hmrs.ico</application.iconWin>
+		<application.iconMac>../core/src/main/resources/hmrs.icns</application.iconMac>
+		<application.macStubPath>../core/src/main/resources/universalJavaApplicationStub</application.macStubPath>
+	</properties>
+
+	<modules>
+		<module>core</module>
+		<module>mac64</module>
+		<module>win32</module>
+		<module>win64</module>
+	</modules>
+</project>

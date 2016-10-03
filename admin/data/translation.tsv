@@ -1,0 +1,266 @@
+Thanks for your help!	Progress:	55.13%	0.38%	99.24%
+				
+Key	English (PLEASE TRY TO PRESERVE PUNCTUATION/CAPITALIZATION)	Kreyol	French	Spanish
+  ABDOMINAL_PAIN	Abdominal Pain	Doulè nan vant		Dolor abdominal
+  ABOUT	About	De		Acerca de
+  ACID_REFLUX	Acid Reflux	Asid		Reflujo gástrico
+  ADD	Add	Ajouter	Ajouter	Añada
+  NEW_DIRECTIVE	Add new directive	Ajouter nouvelle directive		Añada una directiva nueva
+  ADD_LANGUAGE	Add new language...	Ajouter nouveau langage		Añada un idioma nuevo
+  ENUM_ADD_NEW	Add new value...	 Nouveau valeur		Añada un valor nuevo
+  ADD_PHRASE	Add Phrase	Ajouter phrase		Añada una frase nueva
+  ADD_RESULTS	Add Results	Ajouter resultat		Añada los resultos
+  ADDRESS	Address	Adresse		Dirección
+  AGE	Age	Age		Edad
+  AIDS	AIDS	SIDA		SIDA
+  ALL_DATA	All data	Tout enfomasyon		Toda la información
+  ALL_MEDICATIONS	All Medications	Tout medicaman		Todas las medicinas
+  ALLERGY	Allergy	Aleji		Alergia
+  ALTERNATE_PHONE	Alternate Phone	Telefon alternatif		Otro número de teléfono
+  ANEMIA	Anemia	Anemi		Anemia
+  CONFIRM_PROMPT	Are you sure you want to 	Eske ou sure ke ou vle		¿Está seguro/a que quiere
+  ASTHMA	Asthma	Opresyon		Asma
+  BIRTH_YEAR	Birth Year	Anne de naissance		Año de nacimiento
+  BLOOD	Blood	San		Sangre
+  BLOOD_GLUCOSE	Blood Glucose	Sucre nan san		Azúcar
+  BLOOD_PRESSURE	Blood Pressure	Tansyon san		Presión
+  BMI	BMI	IKP		Indice de masa corporal
+  BOTH	both	tou deux		ambos
+  BOTTLE	bottle of	bouteille		botella de
+  QTY_BOT_PACK_TUBE	bottle/pack/tube of	boutèy/pakèt/tube		botella/paquete/tubo de
+  CANCEL	Cancel	Terminé		Cancela
+  CATEOGRY	Category	Kategori		Categoría
+  CHILDREN	Children	Timoune		Los niños
+  CHILDREN_AGES	Children's Ages	Age timoune yo		Las edades de los niños
+  CHURCH_MEMBER	Church Member	Membre L'eglise		Un miembro de la iglesia
+  CITY	City	Ville		Ciudad
+  CLINIC_TEAM	Clinic Team	Ekip klinik la		Equipo de la clínica
+  COLD	Cold	Grip		Gripe
+  COLLAPSE_ALL	Collapse All			Reduzca todos
+  COMMENTS	Comments	Commentaire		Comentarios
+  COMMUNITY	Community	Komin 		Comunidad
+  CONFIRM	Confirm	Confirmé		Confirma
+  CONTACT_INFORMATION	Contact Information	Enfomasyon 		Información de contacto
+  COUGH	Cough	Tous		La tos
+  COUNTRY	Country	Peyi		El país
+  CURRENT_MEDICATIONS	Current Medications	Medikaman ou pran kounya		Las medicinas que está tomando
+  ERROR_LAST_SEARCH	Current search is the most recent			Esta búsqueda es la mas reciente
+  CUSTOM	Custom	Personnalisé		Personalizada
+  DATE	Date	Dat		Fecha
+  DOB	Date of Birth	Dat de naissance		Fecha de nacimiento
+  NO_DOB	Date of birth not provided	Dat de naissance inconnue		Fecha de nacimiento no está disponible
+  DAY	Day	Jou		Día
+  DECEASED	Deceased	Mò		Difunto
+  DELETE_DIRECTIVE	Delete directive	Efase directive sa		Borre la directiva
+  DELETE_PATIENT	Delete Patient	Efase patient sa		Borre el paciente
+  DELETE_PHRASE	Delete Phrase	Efase phrase sa		Borre la frase
+  DELETE_PRESCRIPTION	Delete Prescription	Efase preskripsyon sa		Borre la receta
+  DELETE_VISIT	Delete Visit	Efase visite sa		Borre la cita
+  DEPRESSION_ANXIETY	Depression/Anxiety	Kè mare		Depresión
+  DIABETES	Diabetes	Dyabèt		Diabetes
+  DIAGNOSIS	Diagnosis	Diagnostic		Diagnóstico
+  DIARRHEA	Diarrhea	Dyare		Diarrea
+  DIASTOLIC	Diastolic			Diastólico
+  DIRECTIVE	Directive	Directive		Directiva
+  DIRECTIVES	Directives/Patient Instructions	Instructions pou patient an		Directivas/Las instrucciónes para el paciente
+DIVORCED	Divorced	Divorcé		Divorciado/a
+  CONFIRM_SAVE	Do you want to save your changes?	Eske ou vle sauvegarder chanjman sa yo?		¿Quiere guardar los cambios?
+  DOSAGE	Dosage	Dosage		Dosis
+  EAR	ear	Z'oreille		Oreja
+  EDIT	Edit			Modifique
+  EDIT_DICTIONARY	Edit Dictionary			Modifique el diccionario
+  NEXT_DIRECTIVE	Edit next directive			Modifique la próxima directiva
+  EDIT_PATIENT	Edit Patient			Modifique el paciente
+  EDIT_PRESCRIPTION	Edit Prescription			Modifique la receta
+  PREVIOUS_DIRECTIVE	Edit previous directive			Modifique la directiva anterior
+  EDIT_TRANSLATION	Edit Translation			Modifique la traducción
+  EDIT_VISIT	Edit Visit			Modifique la cita
+  EDUCATION	Education			Educación
+  EDUCATION_GIVEN	Education given to the patient			Educación para el paciente
+  E_MAIL	E-mail			El correo electrónico
+  EPILEPSY_SEIZURES	Epilepsy/Seizures	Kriz malkadi		Epilepsia/convulsiones/ataques epilépticos
+  ERROR_EXPORT_TO_EXCEL	Error exporting to Excel: 			Un error de sacar a Excel:
+  ERROR_SAVING	Error saving: 			Un error al guardar:
+  ERROR	Error: 			Un error:
+  ERROR_TOO_MANY_ROWS	Exceeded number of rows allowed in Excel worksheet			Ha sobrepasado el número de filas permitadas en la hoja de Excel
+  EXCLUDE_DECEASED	Exclude deceased patients			Excluya los pacientes difuntos
+  EXIT	Exit 			Salga
+  EXPAND_ALL	Expand All			Amplía todos
+  EXPORT	Export			Exporte
+  EXPORT_DIR_REPORT	Export directive (sticker) report			Exporte el reporte de los directivos
+  EXPORT_MED_REPORT	Export medicine report			Exporte el reporte de las medicinas
+  EXPORT_TO_HTML	Export to HTML			Exporte a HTML
+  EXPORT_TO_EXCEL	Export to Microsoft Excel			Exporte a Microsoft Excel
+  EXPORTING	Exporting to			Exportando a
+  EYE	eye	Zye		ojo
+  EYE_CONDITION	Eye Condition	Pwoblèm zye		Condición del ojo
+FEMALE	Female	Femme		Femenina
+  FEVER	Fever	Lafyèv		Fiebre
+  SEARCH_FIELDS	Fields to search			Campos para buscar
+  FILARIASIS	Filariasis	Filaryoz		Filariosis
+  FILE	File			Archivo
+  FIND	Find			Encuentre
+  FIRST_NAME	First Name	Non		Nombre
+  FOLLOW_UP_COMMENTS	Follow-up and Comments			Instrucciones para el regreso y Comentarios
+  FOLLOW_UP	Follow-up with patient			Haga un seguimiento con el paciente 
+  FOR	for			para
+  FORM	Form			Forma
+  FULL_NAME	Full Name			Nombre completo
+  GENDER	Gender			Género
+  GENERIC_TREATMENT	Generic Equivalent			Equivalente Genérico
+  GRAPH	Graph			Gráfica
+  APP_TITLE	Haiti Medical Records System			El sistema de los registros médicos Haitianos
+  QTY_HALF	half of			la mitad de
+  HEADACHE	Headache	Tèt fè mal		Dolor de cabeza
+  HEIGHT	Height			Altura
+  HELP	Help			Ayuda
+  HEMOGLOBIN	Hemoglobin			Hemoglobina
+  HEMOLIZED	Hemolized			Hemolizadas
+  HYGIENE	Hygiene			Higiene
+  HYPERTENSION	Hypertension	Tansyon wo		Hipertensión
+  ID	Identifier			Identificador
+  INFECTION	Infection	Enfeksyon		Infección
+  INSTANT_RESULTS	Instantly update results			Actualize los resultos inmediatamente
+  ITCHING_RASH	Itching/Rash	Gratèl		Picazón/Sarpullido
+  LABS	Labs			Pruebas de laboratorio
+  LADS	LADS	LADS		LADS
+  LADS_NAME	LADS Name			Nombre de LADS
+  LADS_PATIENT	LADS Patient			Paciente de LADS
+  LADS_REPORT	LADS Report			Reporte de LADS
+  LANGUAGE	Language			Idioma
+  LARGE	Large			Grande
+  LAST_NAME	Last Name	Siyati		Apellido
+  LATER_THIS_WEEK	Later this week			Mas tarde en esta semana
+  LEFT	left	A gauche		izquierda
+  LEUKOCYTES	Leukocytes			Leucocito
+  MALARIA	Malaria	Malarya		Malaria
+  MALE	Male			Hombre
+  MARITAL_STATUS	Marital Status			Estado Civil
+MARRIED	Married			Casado
+  MATCHES	Matches			Instancias
+  MATERNITY	Maternity	Maternité		Maternidad
+  MEDICAL_HISTORY	Medical History	Histoire Medical		Historial Médico
+  MEDICATIONS	Medications	Medicaman		Medicamentos
+  MODERATE	Moderate			Moderado
+MONTH	Month	Moi		Mes
+  MONTHS	Months	Mois		Meses
+  NA	N/A			No se aplica
+  NAME	Name	Nom		Nombre
+  NEGATIVE	Negative	Negatif		Negativo
+  NEW_PATIENT	New Patient	Nouveau Patient		Paciente nuevo
+  NEW_PRESCRIPTION	New Prescription	Nouveau Prescription		Receta nueva
+  NEW_VISIT	New Visit	Nouveau Visit		Cita nueva
+  NEXT_CLINIC	Next clinic	Prochaine Clinic		Próxima clínica
+  NEXT_PAGE	Next Page	Lot Page		Página próxima
+  NEXT_SEARCH	Next Search			Búsqueda próxima
+  NITRITE	Nitrite			Nitrito
+  NO	No	Non		No
+  ERROR_FIRST_SEARCH	No previous searches			Ningunas búsquedas anteriores
+  NON_HEMOLIZED	Non-hemolized			No hemolizado
+  NORMAL	Normal	Normal		Normal
+  NOTES	Notes	Not		Notas
+  NURSING	Nursing	Soignez		Mamar al bebe
+  OK	OK	Oke		Está bien
+  ORIGINALLY	originally	originalment		originalmente
+  OTHER	Other	Lot		Otro
+  OTHER_INFORMATION	Other Information			Otra información
+  OUTSIDE_REFERRAL	Outside referral			Referencia de otro médico
+  PACKAGE	pack of			paquete de
+  PAIN	Pain	Doulè		Dolor
+  QTY_PAIR	pair of			par de
+  PATIENT	Patient			Paciente
+  COMPLIANCE	Patient Compliance			Cumplimiento del paciente
+  PATIENT_GROUP	Patient Group			Grupo de Pacientes
+  PATIENT_ID	Patient ID			Identificación del paciente
+  PATIENT_SUMMARY	Patient Summary			Resumen del paciente
+  PATIENTS	Patients	Patiens		Pacientes
+  PH	pH			pH
+  PHONE	Phone	Telefon		Teléfono
+  REENTER_INPUT	Please re-enter invalid input for:			Por favor vuelva a entrar la entrada inválida:
+  SELECT_PRESCRIPTION	Please select a prescription			Por favor escoga una receta
+  SELECT_DIRECTIVE	Please select a valid directive number			Por favor escoga un número de directivo válido
+  POSITIVE	Positive			Positivo
+  PREGNANT	Pregnant	Ensente		Embarazada
+  PRESCRIBED	Prescribed			Recetado
+  PRESCRIPTION	Prescription	Prescription		Receta
+  PRESCRIPTIONS	Prescriptions	Prescriptions		Recetas
+  PREVIOUS_PAGE	Previous Page			Página anterior
+  PREVIOUS_SEARCH	Previous Search			Búsqueda anterior
+  PROTEIN	Protein	Protein		Proteína
+  PROVIDER	Provider			Proveedor
+  PULSE	Pulse			Pulso
+  QUANTITY	Quantity			Cantidad
+  QTY_MODIFIER	Quantity Modifier			Modificador de cantidad
+  QTY_QUARTER	quarter of			cuarto de
+  QUERYING	Querying			Buscando
+  READY	Ready			Disponsible
+  REFRESH	Refresh			Regenere
+  REMOVE	Remove	Retiré		Quite
+  REMOVE_RESULTS	Remove Results	Retiré Resultat		Quite los resultos
+  RESPIRATION	Respiration	Respiration		Respiración
+  RESULT	Result	Resultat		Resultado
+  CLOSE	Return to previous screen	Retounen nan ecran an avant		Regrese a la pantalla anterior
+  RIGHT	right	a droit		derecha
+  SAVE	Save	Sauvé		Guarde
+  SAVE_ALL	Save All Changes	Sauvé tout changement		Guarde todos los cambios
+  SAVING	Saving	Sauvé		Guardando
+  SAVING_DICTIONARY	Saving changes to dictionary...	Sauvé changement sou dictionaire...		Guardando los cambios al diccionario...
+  SEARCH	Search	Cherché		Busque
+  CHILDREN_AGES_HELP	Separate ages with spaces or commas			Separe las edades con espacios o comas
+  SET_CLINIC_TEAM	Set Clinic Team			Establecer el Equipo Clínico
+  SET_PATIENT_GROUP	Set Patient Group			Establecer el Grupo de Pacientes
+  STI	Sexually-Transmitted Infection	Maladi ou pran nan fè sèks		Infecciones de Transmisión Sexual
+  SHOW_PRESCRIPTIONS	Show Prescriptions	Montre prescriptions		Enseñe las Recetas
+  SHOW_VISITS	Show Visits			Enseñe las Citas
+  SINGLE	Single	Seul		Soltero
+  SKIN_CONDITION	Skin Condition	Pwoblèm sou po ou		Enfermedad Cutánea
+  SMALL	Small	Piti		Pequeño
+  PATIENT_SORT	Sort patients by			Ordenar los pacientes por
+  DIAGNOSIS_SPECIFIC	Specific Diagnosis			Diagnóstico específico
+  SPECIFY_EXPORT_DIRECTORY	Specify export directory:			Especifique el directorio de exportación:
+  STANDARD_SCRIPTS	Standard/Pre-Bagged Prescriptions			Recetas Típicas
+  STREP	Strep			Estrep
+  SYMPTOMS	Symptoms/Complaints	Syntom/		Los síntomas
+  SYSTOLIC	Systolic			Sistólico
+  TABLE	Table	Table		Tabla
+  DATA_TABLE	Tablular Data			Datos de la tabla
+  TAGS	Tags			Etiquetas
+  TEMPERATURE	Temperature	Tanperati		Temperatura
+  DICTIONARY	the dictionary	dictionaire		Diccionario
+  FINISHED_MEDS	The patient has run out of medications			El paciente no tiene mas medicina
+  TAKING_MEDS	The patient is taking their medications correctly			El paciente está tomanda la medicina correctamente
+  EDUCATION_UNDERSTOOD	The patient understands the education			El paciente entiende la educación
+  UNTRANSLATED_TEXT	This text is in another language- it has not been translated to the selected language. Please translate it if you are able.			Este texto está escrito en otro idioma y no se ha traducido al idioma escogido.  Por favor tradúzcalo si usted puede.
+  TOOLS	Tools	Zouti		Herramientas
+  TRACE	Trace			
+  TRANSLATING_WITH_GOOGLE	Translating phrases using Google Translate			Traducir las frases utilizando Google Translate...
+  TREATMENT	Treatment	Traitment		Tratamiento
+  TUBE	tube of	tube de		tubo de
+  TUBERCULOSIS	Tuberculosis	Tibèkiloz		Tuberculosis
+  TYPHOID	Typhoid	Tyfoyid		Fiebre tifoidea
+  ERROR_MESSAGE	Unfortunately there has been an unexpected error in the program. Please restart the program and connect to the internet as soon as possible so that information about the error can be sent to the development team. Sorry for the inconvenience.	Malheuresement te gen yon error nan program nan. S'il vou plait recommencé program nan epi connecté sou internet le plus vit possible pou ka voyé information sou error an bay ekip development. Excuse'm pour ti problem sa.		Desgraciadamente ha habido un error inesperado en el programa. Por favor reinicie el programa y conecte a la red tan pronto como sea posible para que la información sobre el error pueda ser enviado al equipo de desarollo. Disculpe la molestia.
+  UNSUPPORTED_ACTION	Unsupported action			Esta acción no está soportada.
+  UROBILINOGEN	Uribilinogen			Urobilinógeno
+  URINE	Urine	Urine		Orina
+  GOOGLE_TRANSLATE	Use Google Translate	Utilisé Translation Google		Use Google Translate
+  VAGINITIS	Vaginitis	Enfeksyon vaginal		Vaginitis
+  VALUE	Value			
+  VIEW_RESULTS	View Results			Vea los resultados
+  VISIT	Visit	Visit		Cita
+  VISITS	Visits	Visits		Citas
+  VITALS	Vitals	Vitals		Signos Vitales
+  VITAMINS	Vitamins	Mank vitamin		Vitaminas
+  INVALID_DATA	Warning: you have entered invalid data that will not be saved.			Aviso: Ha escrito datos inválidos que no serán guardados
+  WEIGHT	Weight	Liv		Peso
+  PATIENT_GROUP_PROMPT	Which patient group is this clinic serving?	Ki group de patient clinic nan ap sevi?		¿A qué grupo de pacientes está atendiendo esta clínca?
+  CLINIC_TEAM_PROMPT	Which team is running this clinic?	Ki ekip kap fe clinic nan?		¿Cuál es el equipo que está operando esta clínica?
+  QTY_WHOLE	whole	tout		entero
+WIDOWED	Widowed			Enviudada
+  WORMS	Worms	Vè		Gusanos
+YEAR	Year	Anneés		Año
+  YEARS	Years	Anneé		Años
+  YES	Yes	Wi		Sí
+  ERROR_MUST_ENTER_VAL	You must enter a value before clicking: 			Tiene que introducir un dato antes de hacer click:
+  ERROR_DIR_NUM	You must select a directive number.			Tiene que escoger un número de directivo:
+  ENUM_SEL_ERROR	You must select an existing value or create a new one			Tiene que escoger un dato que existente o crear un dato nuevo
+  ERROR_MUST_SELECT	You must select an item before clicking: 			Tiene que escoger un punto antes de hacer click:

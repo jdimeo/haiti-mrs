@@ -1,0 +1,73 @@
+﻿// This file has two parts- at the top, with no language, the blank structure of each directive is defined.
+// # indicates a whole number, 0 or greater
+// $ indicates a string value, which is user-entered and will always be in one language
+// [..|..|..] indicates a enumeration of values. If a dictionary key exists with the identical name
+//            to the values, they will be translated. If not, they will be displayed as given.
+// The second part is the translated text of each directive, with underscores indicating where each
+// blank belongs in the text.
+//
+// The language can just be the language name, or also the country after a colon so that the correct
+// flag icon can be associated with the language if that language didn't already exist in the database
+// when this file is parsed.
+//
+DIRECTIVE_NUM|DIRECTIVE_TYPE|LANGUAGE|TITLE|TEXT
+ 1|I||$|# # # #
+ 2|I||$|# # # #
+ 3|I||$|# # # #
+ 4|I||$|# $ # #
+ 5|I||$|# [ear,eye] [left,right,both] # # #
+ 6|I||$|# # # #
+ 7|I||$|#
+ 8|I||$|# #
+ 9|I||$|# $
+10|I||$|
+11|I||$|# $ # #
+12|I||$|
+13|I||$|
+14|A|||
+15|A|||
+16|A|||
+17|A|||
+18|A|||
+19|I||$|# # # #
+20|I||$|# # # #
+ 1|I|English:USA|Medicine for _|Take _ pills each morning, _ pills each noon, _ pills each evening, and _ pills each night.
+ 2|I|English:USA|Medicine for _|Chew _ pills each morning, _ pills each noon, _ pills each evening, and _ pills each night.
+ 3|I|English:USA|Medicine for _|Take _ teaspoons each morning, _ each noon, _ each evening, and _ each night.
+ 4|I|English:USA|Medicine for _|Take _ pills each time you have _. Wait _ hours before taking again. Up to _ pills a day.
+ 5|I|English:USA|Medicine for _|Put _ drops in your _ _ each morning, _ each noon, _ each evening, and _ each night.
+ 6|I|English:USA|Medicine for _|Squirt in your nose _ times each morning, _ times each noon, _ times each evening, and _ times each night.
+ 7|I|English:USA|Medicine for _|Take 2 puffs _ times a day.
+ 8|I|English:USA|Medicine for _|Take 2 puffs whenever you have trouble breathing. Wait _ hours before using again. Up to _ uses a day.
+ 9|I|English:USA|Medicine for _|_ times a day, apply cream to your _ after washing it.
+10|I|English:USA|Medicine for _|At night, apply cream from the neck down. Wash it off with soap and water in the morning.
+11|I|English:USA|Medicine for _|Chew _ pills each time you have _. Wait _ hours before taking again. Up to _ pills a day.
+12|I|English:USA|Medicine for _|Take this medicine today.
+13|I|English:USA|Medicine for _|Fill the applicator with the med. Apply vaginally at bedtime every night for 7 days.  May also apply to affected or itchy area 2 times a day as needed.
+14|A|English:USA|Attention!|Always eat some food before taking this medicine.  If you don't have any food at all for several days, you should not take this medicine until you have food again.
+15|A|English:USA|Attention!|Do not stop taking the medicine until it is finished.
+16|A|English:USA|Attention!|Medicine needed continuously.
+17|A|English:USA|Attention!|Give the medicine to your child.
+18|A|English:USA|Attention!|Stop taking the medicine if you are vomiting.
+19|I|English:USA|Medicine for _|Take _ droppers filled to the mark each morning, _ each noon, _ each evening, and _ each night.
+20|I|English:USA|Medicine for _|Take _ pills now, take _ in 6 hours, then take _ tomorrow and _ the day after.
+ 1|I|Kreyol:Haiti|Medikaman pou _|Bwè _ grenn chak maten, _ grenn chak midi, _ grenn chak aprè midi, ak _ grenn chak swa anvan w’al domi.
+ 2|I|Kreyol:Haiti|Medikaman pou _|Kraze grenn la nan bouch ou anvan ou vale'l. Pran _ grenn chak maten, _ grenn chak midi, _ grenn chak aprè midi, ak _ grenn chak swa anvan w’al domi.
+ 3|I|Kreyol:Haiti|Medikaman pou _|Bwè _ tikiyè chak maten, _ tikiyè chak midi, _ tikiyè chak aprè midi, ak _ tikiyè chak swa anvan w’al domi.
+ 4|I|Kreyol:Haiti|Medikaman pou _|Bwè _ grenn chak fwa ou gen _. Tann _ èd tan anvan ou pran medikaman an ankò. Pa depase _ grenn pa jou.
+ 5|I|Kreyol:Haiti|Medikaman pou _|Mete _ gout nan _ _ ou chak maten, _ gout chak midi, _ gout chak aprè midi, ak _ gout chak swa anvan w’al domi.
+ 6|I|Kreyol:Haiti|Medikaman pou _|Flite medikaman an nan nen’w _ fwa chak maten, _ fwa chak midi, _ fwa chak aprè midi, ak _ fwa chak swa anvan w’al domi.
+ 7|I|Kreyol:Haiti|Medikaman pou _|Pran medikaman an _ fwa pa jou. Chak fwa ou pran medikaman an, ponpe'l nan bouch ou, respire pwofondeman, epi kenbe souf ou menm lè a pandan 10 segonn. Fè menm bagay la yon dezyèm fwa direkteman.
+ 8|I|Kreyol:Haiti|Medikaman pou _|Pran medikaman an lè ou pa ka respire. Chak fwa ou pran medikaman an, ponpe'l nan bouch ou, respire pwofondeman, epi kenbe souf ou menm lè a pandan 10 segonn. Fè menm bagay la yon dezyèm fwa direkteman. Tann _ èd tan anvan ou pran medikaman an ankò. Pa depase _ fwa pa jou.
+ 9|I|Kreyol:Haiti|Medikaman pou _|_ fwa pa jou, lave _ ou avèk savon ak dlo, epi pase pomad la sou li. Atansyon! Pa kite pomad la manyen zye'w.
+10|I|Kreyol:Haiti|Medikaman pou _|Anvan w'al domi, pase pomad la sou tout ko’w.  Pa pase’l sou figi’w. Chak fwa ou pase pomad la, kite'l repose pandan nwit la, epi lave’l avèk dlo pwop nan maten an.
+11|I|Kreyol:Haiti|Medikaman pou _|Kraze _ grenn nan bouch ou anvan ou vale'l chak fwa ou gen _. Tann _ èd tan anvan ou pran medikaman an ankò. Pa depase _ grenn pa jou.
+12|I|Kreyol:Haiti|Medikaman pou _|Bwè medikaman sa a jodi a.
+13|I|Kreyol:Haiti|Medikaman pou _|Plen aplikatè a avèk pomad la.  Pase’l nan chouchoun ou anvan w’al domi. Fè sa pandan 7 jou. Si chouchoun ou grate’w, mete yon tikal pomad sou 2 dwèt epi pase’l sou kote sa 2 fwa pa jou.
+14|A|Kreyol:Haiti|Atansyon!|Pa janm pran medikaman sa a san ou pa manje. Si ou pa gen manje pandan kèk jou, pa pran medikaman sa a anvan ou jwenn manje pou manje.
+15|A|Kreyol:Haiti|Atansyon!|Pa sispann pran medikaman an tout tan li poko fini.
+16|A|Kreyol:Haiti|Atansyon!|Pa kite medikaman an fini san ou pa mande lòt. W'ap toujou bezwen medikaman sa-a.
+17|A|Kreyol:Haiti|Atansyon!|Bay medikaman an a pitit ou.
+18|A|Kreyol:Haiti|Atansyon!|Lè ou gen vomisman e ou pa ka manje, pa pran medikaman jou sa-a.
+19|I|Kreyol:Haiti|Medikaman pou _|Ranpli kont gout la jouk mak la. Mete kantite sa nan bouch _ fwa chak maten, _ fwa chak midi, _ fwa chak aprè midi , ak _ fwa chak swa anvan w’al domi.
+20|I|Kreyol:Haiti|Medikaman pou _|Bwè _ grenn kounye a. Bwè _ grenn nan 6 èd tan. Bwè _ grenn demen. Bwè _ grenn aprè demen.
