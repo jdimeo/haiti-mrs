@@ -16,7 +16,7 @@ import org.vwazennou.mrs.script.PrescriptionDirective;
 import org.vwazennou.mrs.visit.ClinicTeam;
 import org.vwazennou.mrs.visit.Visit;
 
-import com.datamininglab.foundation.ui.StatusMonitor;
+import com.datamininglab.commons.lang.StatusMonitor;
 
 import gnu.trove.map.hash.TIntIntHashMap;
 import gnu.trove.set.hash.TLongHashSet;

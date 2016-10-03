@@ -17,8 +17,9 @@ import org.eclipse.swt.widgets.Text;
 import org.vwazennou.mrs.dictionary.Str;
 
 import com.datamininglab.foundation.data.lut.LookupTable;
-import com.datamininglab.foundation.swt.util.ResourceManager;
-import com.datamininglab.foundation.swt.util.SWTUtilities;
+import com.datamininglab.viz.gui.swt.util.GridDataBuilder;
+import com.datamininglab.viz.gui.swt.util.ResourceManager;
+import com.datamininglab.viz.gui.swt.util.SWTUtilities;
 
 public final class MRSControls {
 	private MRSControls() {
@@ -45,10 +46,10 @@ public final class MRSControls {
 		l.setLayoutData(gd);
 	}
 	
-	public static Label separator(ResourceManager rm, Composite parent, Object title, int style, int hspan) {
-		Label l = SWTUtilities.addSeperator(rm, parent, "Placeholder", style, hspan);
-		l.setData(SWTInterface.TEXT, title);
-		return l;
+	public static Composite separator(ResourceManager rm, Composite parent, Object title, int style, int hspan) {
+		Composite c = SWTUtilities.addSeperator(rm, parent, "Placeholder", null, style);
+		c.setData(SWTInterface.TEXT, title);
+		return GridDataBuilder.hFill().hSpan(hspan).apply(c);
 	}
 	
 	public static Button check(Composite parent, Str string, Composite mneumonicRoot) {

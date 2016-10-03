@@ -12,7 +12,7 @@ import org.vwazennou.mrs.script.DirectiveText;
 import org.vwazennou.mrs.ui.MRSInterface;
 import org.vwazennou.mrs.ui.swt.SWTInterface;
 
-import com.datamininglab.foundation.swt.util.SWTUtilities;
+import com.datamininglab.viz.gui.swt.util.SWTUtilities;
 
 /**
  * This class dynamically provides the snippets of text in between blanks for directives.  It takes

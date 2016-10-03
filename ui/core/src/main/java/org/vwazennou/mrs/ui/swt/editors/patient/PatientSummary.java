@@ -8,6 +8,7 @@ import java.awt.Color;
 import java.util.Date;
 import java.util.Stack;
 
+import org.apache.commons.lang3.StringUtils;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.SashForm;
 import org.eclipse.swt.custom.ScrolledComposite;
@@ -36,26 +37,22 @@ import org.vwazennou.mrs.ui.swt.editors.patient.VisitCallback.Treatment;
 import org.vwazennou.mrs.ui.swt.search.SearchResults;
 import org.vwazennou.mrs.visit.Visit;
 
-import com.datamininglab.foundation.awt.ColorPalette;
-import com.datamininglab.foundation.awt.icons.IconsMS;
-import com.datamininglab.foundation.awt.icons.IconsMed;
-import com.datamininglab.foundation.awt.plot.BasePlot.PlotAxes;
-import com.datamininglab.foundation.data.field.DataFields.DateField;
-import com.datamininglab.foundation.data.field.DataFields.FloatField;
-import com.datamininglab.foundation.data.field.DataFields.IntField;
-import com.datamininglab.foundation.data.field.DataFields.StringField;
+import com.datamininglab.commons.icons.eri.IconsMed;
+import com.datamininglab.commons.icons.ms.IconsMS;
+import com.datamininglab.commons.lang.Utilities;
+import com.datamininglab.commons.lang.utf.UnicodeChars;
 import com.datamininglab.foundation.data.render.DataRenderers.DateRenderer;
 import com.datamininglab.foundation.data.render.DataRenderers.StringRenderer;
-import com.datamininglab.foundation.swt.controls.data.DataTable;
-import com.datamininglab.foundation.swt.plot.scatter.ScatterLinePainter.DefaultLinePainter;
-import com.datamininglab.foundation.swt.plot.scatter.ScatterLinePainter.DefaultLinePainter.ScatterLineMode;
-import com.datamininglab.foundation.swt.plot.scatter.ScatterPlotWithLegend;
-import com.datamininglab.foundation.swt.plot.scatter.ScatterPointPainter.DefaultPointPainter;
-import com.datamininglab.foundation.swt.util.ResourceManager;
-import com.datamininglab.foundation.swt.util.SWTUtilities;
-import com.datamininglab.foundation.text.UnicodeChars;
-import com.datamininglab.foundation.ui.UIUtilities.UIAction;
-import com.datamininglab.foundation.util.Utilities;
+import com.datamininglab.viz.gui.ColorPalette;
+import com.datamininglab.viz.gui.UIAction;
+import com.datamininglab.viz.gui.swt.controls.data.DataTable;
+import com.datamininglab.viz.gui.swt.plot.scatter.ScatterLinePainter.DefaultLinePainter;
+import com.datamininglab.viz.gui.swt.plot.scatter.ScatterLinePainter.ScatterLineMode;
+import com.datamininglab.viz.gui.swt.plot.scatter.ScatterPlotWithLegend;
+import com.datamininglab.viz.gui.swt.plot.scatter.ScatterPointPainter.DefaultPointPainter;
+import com.datamininglab.viz.gui.swt.util.ResourceManager;
+import com.datamininglab.viz.gui.swt.util.SWTUtilities;
+import com.datamininglab.viz.plotting.PlotAxes;
 
 public class PatientSummary extends Composite implements MRSViewable, SelectionListener {
 	private static final String DELIM = ", ";
@@ -65,7 +62,7 @@ public class PatientSummary extends Composite implements MRSViewable, SelectionL
 	static final StringRenderer<Float> FLOAT_RENDERER = new StringRenderer<Float>() {
 		@Override
 		public String render(Float in) {
-			if (in == 0.0f) { return ""; }
+			if (in == 0.0f) { return StringUtils.EMPTY; }
 			return Utilities.stringValue(in, 1);
 		}
 	};

@@ -8,9 +8,9 @@ import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Widget;
 
-import com.datamininglab.foundation.swt.util.SWTUtilities;
-import com.datamininglab.foundation.ui.UIUtilities;
-import com.datamininglab.foundation.util.ReflectionUtils;
+import com.datamininglab.commons.lang.ReflectionUtils;
+import com.datamininglab.viz.gui.swt.util.MnemonicUtils;
+import com.datamininglab.viz.gui.swt.util.SWTUtilities;
 
 public final class TextRefreshDelegate implements Runnable {
 	public static void refreshThreadSafe(Widget w) { new TextRefreshDelegate(null, w, true); }
@@ -70,8 +70,8 @@ public final class TextRefreshDelegate implements Runnable {
 		Object mref = w.getData(SWTInterface.MNEUMONIC);
 		if (mref != null) {
 			Object prev = ReflectionUtils.invoke(w, "getText");
-			if (prev != null) { UIUtilities.freeMnemonic(mref, prev.toString()); }
-			s = UIUtilities.getMnemonic(mref, s, null);
+			if (prev != null) { MnemonicUtils.freeMnemonic(mref, prev.toString()); }
+			s = MnemonicUtils.getMnemonic(mref, s, null);
 		}
 		ReflectionUtils.invoke(w, "setText", s);
 	}

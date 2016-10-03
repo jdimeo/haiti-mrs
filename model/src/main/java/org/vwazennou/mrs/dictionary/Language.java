@@ -18,9 +18,8 @@ import org.hibernate.Session;
 import org.vwazennou.mrs.MRSMergable;
 import org.vwazennou.mrs.data.Client;
 
-import com.datamininglab.foundation.data.hash.DataHashes;
-import com.datamininglab.foundation.data.lut.LookupTable;
-import com.datamininglab.foundation.orm.LUTHibernateCache;
+import com.datamininglab.commons.hash.DataHashes;
+import com.datamininglab.commons.structs.lut.LookupTable;
 
 @Entity
 @Table(name = "languages")
@@ -89,7 +88,7 @@ public class Language implements Comparable<Language>, MRSMergable {
 	@Override
 	public String toString() { return name; }
 	
-	public static LookupTable<Language, String> getAll(Session session) {
+	public static LookupTable<String, Language> getAll(Session session) {
 		return new LookupTable<>(Language.class, "name", DataHashes.STRING_HASH)
 				.setCache(new LUTHibernateCache<Language, String>(session)).fill();
 	}

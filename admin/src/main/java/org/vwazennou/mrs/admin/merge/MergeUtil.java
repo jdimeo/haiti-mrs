@@ -11,16 +11,16 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 import org.apache.commons.lang3.ArrayUtils;
-import org.apache.commons.lang3.ObjectUtils;
 import org.vwazennou.mrs.MRSMergable;
 import org.vwazennou.mrs.data.Client;
 import org.vwazennou.mrs.data.ParentOf;
 import org.vwazennou.mrs.dictionary.Str;
 
+import com.datamininglab.commons.lang.ReflectionUtils;
 import com.datamininglab.commons.logging.LogContext;
-import com.datamininglab.foundation.util.ReflectionUtils;
 
 import gnu.trove.procedure.TObjectProcedure;
 
@@ -87,7 +87,7 @@ public final class MergeUtil {
 				Object newVal = ReflectionUtils.get(f, from);
 				Object oldVal = ReflectionUtils.get(f, to);
 				
-				if (!ObjectUtils.equals(newVal, oldVal)) {
+				if (!Objects.equals(newVal, oldVal)) {
 					LogContext.info("%30s: %30s > %30s", f.getName(), oldVal, newVal);
 					ReflectionUtils.set(f, to, newVal);
 				}

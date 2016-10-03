@@ -25,15 +25,15 @@ import org.vwazennou.mrs.script.Prescription;
 import org.vwazennou.mrs.script.PrescriptionDirective;
 import org.vwazennou.mrs.script.PrescriptionDirectiveBlank;
 
-import com.datamininglab.foundation.data.lut.LookupTable;
-import com.datamininglab.foundation.ui.StatusListener.DefaultStatusListener;
-import com.datamininglab.foundation.ui.StatusMonitor;
+import com.datamininglab.commons.lang.StatusListener.DefaultStatusListener;
+import com.datamininglab.commons.lang.StatusMonitor;
+import com.datamininglab.commons.structs.lut.LookupTable;
 
 public final class PrescriptionParser {
 	private static final String DELIM = Pattern.quote("|");
 	
 	private static Formulary formulary;
-	private static LookupTable<Directive, Integer> directives;
+	private static LookupTable<Integer, Directive> directives;
 	
 	private PrescriptionParser() {
 		// Prevent initialization
@@ -56,35 +56,35 @@ public final class PrescriptionParser {
 		DirectiveParser.parseDirectives(session, directives);
 		
 		sm.newTask("Adding standard prescriptions...");
-		Scanner s = new Scanner(new File("data/standard.scripts.txt"));
-		s.nextLine(); // Eat headers
-		while (s.hasNextLine()) {
-			String[] line    = s.nextLine().split(DELIM);
-			String   dx      = line[0];
-			String   qty     = line[1];
-			String   med     = line[2];
-			String   dos     = line[3];
-			String   form    = line[4];
-			
-			int semi = form.indexOf(';');
-			if (semi > 0) { form = form.substring(0, semi); }
-			
-			Prescription p = new Prescription();
-			try {
-				p.setQuantity(Float.parseFloat(qty));
-			} catch (NumberFormatException ex) {
-				p.setQuantity(-1.0f);
+		try (Scanner s = new Scanner(new File("data/standard.scripts.txt"))) {
+			s.nextLine(); // Eat headers
+			while (s.hasNextLine()) {
+				String[] line    = s.nextLine().split(DELIM);
+				String   dx      = line[0];
+				String   qty     = line[1];
+				String   med     = line[2];
+				String   dos     = line[3];
+				String   form    = line[4];
+				
+				int semi = form.indexOf(';');
+				if (semi > 0) { form = form.substring(0, semi); }
+				
+				Prescription p = new Prescription();
+				try {
+					p.setQuantity(Float.parseFloat(qty));
+				} catch (NumberFormatException ex) {
+					p.setQuantity(-1.0f);
+				}
+				p.setTreatment(find(med, FormularyEntryType.TREATMENT));
+				p.setDosage(find(dos, FormularyEntryType.DOSAGE));
+				p.setForm(find(form, FormularyEntryType.FORM));
+				p.setDiagnosis(dx);
+				p.setOriginalClient(Client.UNKNOWN);
+				session.save(p);
+				
+				parseDirectiveBlanks(session, parseDirectives(session, p, line[5]), line[6]);
 			}
-			p.setTreatment(find(med, FormularyEntryType.TREATMENT));
-			p.setDosage(find(dos, FormularyEntryType.DOSAGE));
-			p.setForm(find(form, FormularyEntryType.FORM));
-			p.setDiagnosis(dx);
-			p.setOriginalClient(Client.UNKNOWN);
-			session.save(p);
-			
-			parseDirectiveBlanks(session, parseDirectives(session, p, line[5]), line[6]);
 		}
-		s.close();
 		
 		Database.disconnect(session);
 		Database.disconnect();
@@ -129,8 +129,8 @@ public final class PrescriptionParser {
 				pdb.setValue(pd.getPrescription().getDiagnosis());
 			} else {
 				if (i >= arr.length) {
-					System.err.println("Warning: not enough details provided for directive " +
-							pd.getDirective().getCode() + " for " + pd.getPrescription());
+					System.err.println("Warning: not enough details provided for directive "
+							+ pd.getDirective().getCode() + " for " + pd.getPrescription());
 				} else {
 					pdb.setValue(arr[i++]);
 				}

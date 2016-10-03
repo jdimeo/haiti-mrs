@@ -23,13 +23,13 @@ import org.vwazennou.mrs.visit.Visit;
 import com.datamininglab.commons.logging.LogContext;
 import com.datamininglab.foundation.data.distribution.CategoricalDistribution;
 import com.datamininglab.foundation.data.distribution.DataBinSettings;
-import com.datamininglab.foundation.orm.SessionFactory;
+import com.elderresearch.commons.orm.SessionFactoryWrapper;
 
 class MergeClient {
 	private File f;
 	private List<Client> clients;
 	private Client client;
-	private SessionFactory sf;
+	private SessionFactoryWrapper sf;
 	private Session s;
 	
 	private Map<MergableTable, MergeData> data;

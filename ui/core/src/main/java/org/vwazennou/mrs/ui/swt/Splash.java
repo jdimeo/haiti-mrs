@@ -22,11 +22,12 @@ import org.eclipse.swt.widgets.Shell;
 import org.vwazennou.mrs.HaitiMRS;
 import org.vwazennou.mrs.dictionary.Str;
 
+import com.datamininglab.commons.icons.eri.IconsFlags;
+import com.datamininglab.commons.lang.utf.UnicodeChars;
 import com.datamininglab.commons.logging.LogContext;
-import com.datamininglab.foundation.awt.icons.IconsFlags;
-import com.datamininglab.foundation.swt.util.ResourceManager;
-import com.datamininglab.foundation.swt.util.SWTUtilities;
-import com.datamininglab.foundation.text.UnicodeChars;
+import com.datamininglab.viz.gui.swt.util.GridDataBuilder;
+import com.datamininglab.viz.gui.swt.util.ResourceManager;
+import com.datamininglab.viz.gui.swt.util.SWTUtilities;
 
 public class Splash extends Shell {
 	public static Shell open(Shell parent, ResourceManager rm, int style, String message) {
@@ -72,9 +73,7 @@ public class Splash extends Shell {
 			
 			Button b = new Button(s, SWT.PUSH);
 			b.setText(Str.OK.toString());
-			GridData gd = new GridData(SWT.RIGHT, SWT.CENTER, true, false);
-			gd.widthHint = SWTUtilities.DEFAULT_BUTTON_WIDTH;
-			b.setLayoutData(gd);
+			GridDataBuilder.button().hAlign(SWT.RIGHT).vAlign(SWT.CENTER).hGrab().apply(b);
 			b.addSelectionListener(new SelectionAdapter() {
 				@Override
 				public void widgetSelected(SelectionEvent e) { s.dispose(); }

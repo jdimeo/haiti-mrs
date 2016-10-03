@@ -13,8 +13,8 @@ import org.vwazennou.mrs.script.Prescription;
 import org.vwazennou.mrs.ui.MRSActions;
 import org.vwazennou.mrs.ui.swt.SWTInterface;
 
-import com.datamininglab.foundation.awt.icons.IconsMed;
-import com.datamininglab.foundation.swt.util.ResourceManager;
+import com.datamininglab.commons.icons.eri.IconsMed;
+import com.datamininglab.viz.gui.swt.util.ResourceManager;
 
 public class PrescriptionResult extends SearchResult<Prescription> {
 	public PrescriptionResult(SearchInterface si, Prescription obj, boolean showButtons) {

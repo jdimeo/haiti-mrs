@@ -13,9 +13,8 @@ import javax.persistence.Table;
 
 import org.hibernate.Session;
 
-import com.datamininglab.foundation.data.hash.DataHashes;
-import com.datamininglab.foundation.data.lut.LookupTable;
-import com.datamininglab.foundation.orm.LUTHibernateCache;
+import com.datamininglab.commons.hash.DataHashes;
+import com.datamininglab.commons.structs.lut.LookupTable;
 
 @Entity
 @Table(name = "clients")
@@ -71,8 +70,8 @@ public class Client {
 	@Override
 	public String toString() { return name; }
 	
-	public static LookupTable<Client, Long> getAll(Session session) {
-		return new LookupTable<Client, Long>(Client.class, "id", DataHashes.INTEGER_HASH)
+	public static LookupTable<Long, Client> getAll(Session session) {
+		return new LookupTable<Long, Client>(Client.class, "id", DataHashes.LONG_HASH)
 				.setCache(new LUTHibernateCache<Client, Long>(session)).fill();
 	}
 }

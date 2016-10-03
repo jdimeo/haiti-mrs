@@ -19,13 +19,12 @@ import org.vwazennou.mrs.ui.MRSActions;
 import org.vwazennou.mrs.visit.Visit;
 import org.vwazennou.mrs.visit.VisitText.VisitTextType;
 
-import com.datamininglab.foundation.awt.icons.IconsMS;
-import com.datamininglab.foundation.awt.icons.IconsMed;
-import com.datamininglab.foundation.awt.icons.IconsSilk;
-import com.datamininglab.foundation.swt.util.ResourceManager;
-import com.datamininglab.foundation.swt.util.SWTUtilities;
-import com.datamininglab.foundation.text.UnicodeChars;
-import com.datamininglab.foundation.ui.UIUtilities.UIAction;
+import com.datamininglab.commons.icons.eri.IconsMed;
+import com.datamininglab.commons.icons.ms.IconsMS;
+import com.datamininglab.commons.lang.utf.UnicodeChars;
+import com.datamininglab.viz.gui.UIAction;
+import com.datamininglab.viz.gui.swt.util.ResourceManager;
+import com.datamininglab.viz.gui.swt.util.SWTUtilities;
 
 public class VisitResult extends SearchResult<Visit> {
 	private static final int WIDTH = 120;

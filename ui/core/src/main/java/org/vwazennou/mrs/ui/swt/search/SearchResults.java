@@ -9,8 +9,8 @@ import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 
-import com.datamininglab.foundation.swt.controls.CScrolledComposite;
-import com.datamininglab.foundation.swt.util.ResourceManager;
+import com.datamininglab.viz.gui.swt.controls.CScrolledComposite;
+import com.datamininglab.viz.gui.swt.util.ResourceManager;
 
 public class SearchResults extends CScrolledComposite {
 	private ResourceManager rm;

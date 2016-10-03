@@ -43,12 +43,13 @@ import org.vwazennou.mrs.task.excel.MedicineReport;
 import org.vwazennou.mrs.visit.ClinicTeam;
 import org.vwazennou.mrs.visit.Visit;
 
+import com.datamininglab.commons.lang.Utilities;
 import com.datamininglab.commons.logging.LogContext;
 import com.datamininglab.foundation.data.DataList;
 import com.datamininglab.foundation.data.lut.LookupTable;
-import com.datamininglab.foundation.swt.controls.data.DataTable;
-import com.datamininglab.foundation.ui.Controller;
-import com.datamininglab.foundation.util.Utilities;
+import com.datamininglab.viz.gui.Controller;
+import com.datamininglab.viz.gui.Controller.Task;
+import com.datamininglab.viz.gui.swt.controls.data.DataTable;
 
 import gnu.trove.procedure.TObjectProcedure;
 
@@ -60,9 +61,9 @@ public class MRSController extends Controller {
 	private DirectiveTextRegistry directiveText;
 	private SearchFieldRegistry searchFields;
 	
-	private LookupTable<PatientGroup, String> patientGroups;
-	private LookupTable<ClinicTeam, String>   clinicTeams;
-	private LookupTable<Directive, Integer>   directives;
+	private LookupTable<String, PatientGroup> patientGroups;
+	private LookupTable<String, ClinicTeam>   clinicTeams;
+	private LookupTable<Integer, Directive>   directives;
 	private Prescription[]                    standardScripts;
 	private Set<String>                       uniqueCommunities;
 	private Set<String>                       uniqueCities;

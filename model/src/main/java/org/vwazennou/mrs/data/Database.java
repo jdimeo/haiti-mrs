@@ -30,14 +30,14 @@ import org.vwazennou.mrs.visit.UrineTest;
 import org.vwazennou.mrs.visit.Visit;
 import org.vwazennou.mrs.visit.VisitText;
 
-import com.datamininglab.foundation.orm.SessionFactory;
+import com.elderresearch.commons.orm.SessionFactoryWrapper;
 
 public final class Database {
 	public static final String DB_FILE = "database.db";
 	public static final String MASTER_FILE = "master.db";
 	
-	private static SessionFactory factory;
-	public  static SessionFactory getConnection() { return factory; }
+	private static SessionFactoryWrapper factory;
+	public  static SessionFactoryWrapper getConnection() { return factory; }
 	
 	public static File getClientDirectory() {
 		return new File(Option.DATA_PATH + File.separator + Option.CLIENT_NAME);
@@ -48,7 +48,7 @@ public final class Database {
 	}
 	
 	/** For advanced users only! */
-	public static SessionFactory connect(File file) {
+	public static SessionFactoryWrapper connect(File file) {
 		Configuration c = new Configuration();
 		c.addAnnotatedClass(Client.class);
 		c.addAnnotatedClass(ClinicTeam.class);
@@ -72,7 +72,7 @@ public final class Database {
 		c.addAnnotatedClass(PrescriptionDirective.class);
 		c.addAnnotatedClass(PrescriptionDirectiveBlank.class);
 	
-		return SessionFactory.connectToSQLite(c, file);
+		return SessionFactoryWrapper.connectToSQLite(c, file);
 	}
 	
 	public static Session connect() {

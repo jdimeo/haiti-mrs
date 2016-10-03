@@ -18,25 +18,18 @@
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>com.datamininglab</groupId>
-			<artifactId>FoundationSWT-mac64</artifactId>
-			<version>${foundation.version}</version>
-
-			<exclusions>
-				<exclusion>
-					<groupId>org.prefuse</groupId>
-					<artifactId>prefuse</artifactId>
-				</exclusion>
-			</exclusions>
+			<groupId>com.datamininglab.viz</groupId>
+			<artifactId>eri-gui-swt-mac64</artifactId>
+			<version>${eri.gui.swt.version}</version>
 		</dependency>
 	</dependencies>
 
 	<build>
 		<plugins>
-		   <plugin>
-               <groupId>org.codehaus.mojo</groupId>
-               <artifactId>osxappbundle-maven-plugin</artifactId>
-           </plugin>
+			<plugin>
+				<groupId>sh.tak.appbundler</groupId>
+				<artifactId>appbundle-maven-plugin</artifactId>
+			</plugin>
 		</plugins>
 	</build>
 </project>

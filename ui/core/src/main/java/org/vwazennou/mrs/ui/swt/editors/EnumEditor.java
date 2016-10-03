@@ -22,8 +22,9 @@ import org.vwazennou.mrs.ui.swt.SWTInterface;
 import org.vwazennou.mrs.visit.ClinicTeam;
 
 import com.datamininglab.foundation.data.lut.LookupTable;
-import com.datamininglab.foundation.swt.util.SWTUtilities;
-import com.datamininglab.foundation.ui.UserInterface.MessageType;
+import com.datamininglab.viz.gui.UserInterface.MessageType;
+import com.datamininglab.viz.gui.swt.util.GridDataBuilder;
+import com.datamininglab.viz.gui.swt.util.SWTUtilities;
 
 public final class EnumEditor<T> implements SelectionListener {
 	private LookupTable<T, String> table;
@@ -73,9 +74,7 @@ public final class EnumEditor<T> implements SelectionListener {
 
 		Button ok = new Button(shell, SWT.PUSH);
 		ok.setText(Str.OK.toString());
-		GridData gd = new GridData(SWT.CENTER, SWT.BOTTOM, true, false);
-		gd.widthHint = SWTUtilities.DEFAULT_BUTTON_WIDTH;
-		ok.setLayoutData(gd);
+		GridDataBuilder.button().hAlign(SWT.CENTER).vAlign(SWT.BOTTOM).hGrab().apply(ok);
 		shell.setDefaultButton(ok);
 		ok.addSelectionListener(this);
 	}

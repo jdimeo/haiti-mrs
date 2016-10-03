@@ -4,12 +4,6 @@
  */
 package org.vwazennou.mrs.formulary;
 
-import gnu.trove.iterator.TIntIterator;
-import gnu.trove.map.hash.TIntObjectHashMap;
-import gnu.trove.map.hash.TLongObjectHashMap;
-import gnu.trove.procedure.TIntProcedure;
-import gnu.trove.set.hash.TIntHashSet;
-
 import java.util.Arrays;
 import java.util.List;
 import java.util.TreeSet;
@@ -17,9 +11,14 @@ import java.util.TreeSet;
 import org.hibernate.Session;
 import org.vwazennou.mrs.formulary.FormularyEntry.FormularyEntryType;
 
+import com.datamininglab.commons.hash.HashUtils;
 import com.datamininglab.commons.logging.LogContext;
-import com.datamininglab.foundation.util.CRC64;
-import com.datamininglab.foundation.util.HashUtils;
+
+import gnu.trove.iterator.TIntIterator;
+import gnu.trove.map.hash.TIntObjectHashMap;
+import gnu.trove.map.hash.TLongObjectHashMap;
+import gnu.trove.procedure.TIntProcedure;
+import gnu.trove.set.hash.TIntHashSet;
 
 public class Formulary {
 	private static final char DELIM = '$';
@@ -79,7 +78,7 @@ public class Formulary {
 			for (int i = 0; i < str.length(); i++) {
 				sb.append(str.charAt(i));
 				if (i > 0) {
-					long h = CRC64.getCRC64(sb.toString());
+					long h = HashUtils.getCRC64(sb.toString());
 					TIntHashSet set = index.get(h);
 					if (set == null) {
 						set = new TIntHashSet();
@@ -125,7 +124,7 @@ public class Formulary {
 	}
 	
 	private static int hash(int tid, int did) {
-		return (int) (tid * HashUtils.HASH_COEFF + did);
+		return (int) HashUtils.buildHash(tid, did);
 	}
 	
 	/**
@@ -145,7 +144,7 @@ public class Formulary {
 		query = query.toUpperCase();
 		EntryCollecter ec = new EntryCollecter();
 		for (int i = 0; i < types.length; i++) {
-			long h = CRC64.getCRC64(types[i].name() + DELIM + query);
+			long h = HashUtils.getCRC64(types[i].name() + DELIM + query);
 			TIntHashSet set = index.get(h);
 			if (set != null) { set.forEach(ec); }
 		}

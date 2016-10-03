@@ -10,7 +10,7 @@ import org.vwazennou.mrs.MRSField;
 import org.vwazennou.mrs.MRSField.MRSFieldType;
 import org.vwazennou.mrs.dictionary.Str;
 
-import com.datamininglab.foundation.util.ReflectionUtils;
+import com.datamininglab.commons.lang.ReflectionUtils;
 
 public final class SearchField {
 	private Class<?> c;

@@ -6,7 +6,7 @@ package org.vwazennou.mrs.ui.swt;
 
 import org.eclipse.swt.widgets.Control;
 
-import com.datamininglab.foundation.ui.UIUtilities.UIAction;
+import com.datamininglab.viz.gui.UIAction;
 
 public class MRSView {
 	private MRSViewable parent;

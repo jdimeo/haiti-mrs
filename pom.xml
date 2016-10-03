@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>com.datamininglab</groupId>
 		<artifactId>eri-application-base</artifactId>
-		<version>3.0.2</version>
+		<version>3.1.0</version>
 	</parent>
 
 	<groupId>org.vwazennou</groupId>
@@ -16,7 +16,7 @@
 
 	<properties>
 		<scm>swdev.elderresearch.com/mercurial/Affiliated-Code/HaitiMRS</scm>
-		<foundation.version>2.0.2H</foundation.version>
+		<eri.gui.swt.version>1.7.1</eri.gui.swt.version>
 	</properties>
 	
 	<scm>

@@ -4,6 +4,23 @@
  */
 package org.vwazennou.mrs.task.excel;
 
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+import org.hibernate.Session;
+import org.hibernate.criterion.Order;
+import org.vwazennou.mrs.data.Database;
+import org.vwazennou.mrs.formulary.Formulary;
+import org.vwazennou.mrs.formulary.FormularyEntry;
+import org.vwazennou.mrs.script.Prescription;
+import org.vwazennou.mrs.visit.ClinicTeam;
+import org.vwazennou.mrs.visit.Visit;
+
+import com.datamininglab.commons.hash.HashUtils;
+import com.datamininglab.commons.lang.StatusMonitor;
+
 import gnu.trove.map.TLongFloatMap;
 import gnu.trove.map.TLongIntMap;
 import gnu.trove.map.TLongObjectMap;
@@ -12,12 +29,6 @@ import gnu.trove.map.hash.TLongIntHashMap;
 import gnu.trove.map.hash.TLongObjectHashMap;
 import gnu.trove.procedure.TLongObjectProcedure;
 import gnu.trove.set.hash.TLongHashSet;
-
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-
 import jxl.CellReferenceHelper;
 import jxl.CellView;
 import jxl.format.CellFormat;
@@ -30,18 +41,6 @@ import jxl.write.WritableFont;
 import jxl.write.WritableSheet;
 import jxl.write.WritableWorkbook;
 import jxl.write.WriteException;
-
-import org.hibernate.Session;
-import org.hibernate.criterion.Order;
-import org.vwazennou.mrs.data.Database;
-import org.vwazennou.mrs.formulary.Formulary;
-import org.vwazennou.mrs.formulary.FormularyEntry;
-import org.vwazennou.mrs.script.Prescription;
-import org.vwazennou.mrs.visit.ClinicTeam;
-import org.vwazennou.mrs.visit.Visit;
-
-import com.datamininglab.foundation.ui.StatusMonitor;
-import com.datamininglab.foundation.util.HashUtils;
 
 public class MedicineReport extends ExcelReport implements TLongObjectProcedure<TLongFloatMap> {
 	private static final int FONT_SIZE = 9;
@@ -113,12 +112,13 @@ public class MedicineReport extends ExcelReport implements TLongObjectProcedure<
 				};
 				
 				StringBuilder sb = new StringBuilder();
+				
 				long hash = 0L;
 				for (i = 0; i < tuple.length; i++) {
 					FormularyEntry fe = formulary.getEntry(tuple[i]);
 					if (fe == null) { continue; }
 					
-					hash += (hash * HashUtils.HASH_COEFF) + fe.getId();
+					hash = HashUtils.buildHash(hash, fe.getId());
 					sb.append(' ').append(fe.toString());
 				}
 				

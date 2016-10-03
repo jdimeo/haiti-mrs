@@ -30,17 +30,15 @@ import org.vwazennou.mrs.visit.UrineTest;
 import org.vwazennou.mrs.visit.Visit;
 import org.vwazennou.mrs.visit.VisitText.VisitTextType;
 
-import com.datamininglab.foundation.awt.icons.IconsERI;
-import com.datamininglab.foundation.awt.icons.IconsMS;
-import com.datamininglab.foundation.awt.icons.IconsMed;
+import com.datamininglab.commons.icons.eri.IconsERI;
+import com.datamininglab.commons.icons.eri.IconsMed;
+import com.datamininglab.commons.icons.ms.IconsMS;
+import com.datamininglab.commons.structs.MappedSet;
 import com.datamininglab.foundation.data.field.DataField;
-import com.datamininglab.foundation.data.field.DataFields.FloatField;
-import com.datamininglab.foundation.data.field.DataFields.StringField;
 import com.datamininglab.foundation.data.graph.DefaultEdge;
 import com.datamininglab.foundation.data.graph.Graph;
-import com.datamininglab.foundation.swt.controls.data.DataTable;
-import com.datamininglab.foundation.swt.util.SWTUtilities;
-import com.datamininglab.foundation.util.Structures.MappedSet;
+import com.datamininglab.viz.gui.swt.controls.data.DataTable;
+import com.datamininglab.viz.gui.swt.util.SWTUtilities;
 
 import gnu.trove.map.hash.TObjectFloatHashMap;
 

@@ -21,9 +21,9 @@ import org.eclipse.swt.widgets.ToolItem;
 import org.vwazennou.mrs.dictionary.Str;
 import org.vwazennou.mrs.ui.swt.SWTInterface;
 
-import com.datamininglab.foundation.swt.util.ResourceManager;
-import com.datamininglab.foundation.swt.util.SWTUtilities;
-import com.datamininglab.foundation.ui.UIUtilities.UIAction;
+import com.datamininglab.viz.gui.UIAction;
+import com.datamininglab.viz.gui.swt.util.ResourceManager;
+import com.datamininglab.viz.gui.swt.util.SWTUtilities;
 
 public abstract class SearchResult<T> implements MouseListener, SelectionListener {
 	private static final Color[] SHADE_COLOR = new Color[2];

@@ -13,10 +13,10 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>com.datamininglab</groupId>
-			<artifactId>FoundationORM</artifactId>
-			<version>${foundation.version}</version>
-		</dependency>
+            <groupId>com.datamininglab.commons</groupId>
+            <artifactId>eri-commons-orm</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
 		
 		<dependency>
 			<groupId>net.sourceforge.jexcelapi</groupId>

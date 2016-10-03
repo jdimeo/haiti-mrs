@@ -44,10 +44,10 @@ import org.vwazennou.mrs.ui.swt.MRSView.MRSViewable;
 import org.vwazennou.mrs.ui.swt.SWTInterface;
 import org.vwazennou.mrs.visit.Visit;
 
-import com.datamininglab.foundation.swt.util.ResourceManager;
-import com.datamininglab.foundation.swt.util.SWTUtilities;
-import com.datamininglab.foundation.ui.UIUtilities.UIAction;
-import com.datamininglab.foundation.ui.UserInterface.MessageType;
+import com.datamininglab.viz.gui.UIAction;
+import com.datamininglab.viz.gui.UserInterface.MessageType;
+import com.datamininglab.viz.gui.swt.util.ResourceManager;
+import com.datamininglab.viz.gui.swt.util.SWTUtilities;
 
 public class SearchInterface extends Composite implements SelectionListener, QueryCallback, Runnable, MRSViewable {
 	private static final int MAX_HISTORY = 24;

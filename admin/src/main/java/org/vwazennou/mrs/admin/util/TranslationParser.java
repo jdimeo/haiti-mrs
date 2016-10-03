@@ -17,7 +17,7 @@ import org.vwazennou.mrs.dictionary.DictionaryEntry;
 import org.vwazennou.mrs.dictionary.Language;
 import org.vwazennou.mrs.dictionary.Str;
 
-import com.datamininglab.foundation.util.Utilities;
+import com.datamininglab.commons.lang.Utilities;
 
 public final class TranslationParser {
 	private static final String FILE = "data/translation.tsv";

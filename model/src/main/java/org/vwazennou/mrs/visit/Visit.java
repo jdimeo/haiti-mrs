@@ -49,7 +49,8 @@ import org.vwazennou.mrs.patient.Patient;
 import org.vwazennou.mrs.script.Prescription;
 import org.vwazennou.mrs.visit.VisitText.VisitTextType;
 
-import com.datamininglab.foundation.util.Utilities;
+import com.datamininglab.commons.lang.Utilities;
+
 
 @Entity @Table(name = "visits")
 @Inheritance(strategy = InheritanceType.JOINED)

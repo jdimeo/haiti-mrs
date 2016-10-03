@@ -21,8 +21,8 @@ import org.vwazennou.mrs.dictionary.Str;
 import org.vwazennou.mrs.formulary.Formulary;
 import org.vwazennou.mrs.search.SearchField;
 
-import com.datamininglab.foundation.ui.StatusMonitor;
-import com.datamininglab.foundation.util.Utilities;
+import com.datamininglab.commons.lang.StatusMonitor;
+import com.datamininglab.commons.lang.Utilities;
 
 import gnu.trove.map.hash.TObjectFloatHashMap;
 import gnu.trove.procedure.TObjectFloatProcedure;
@@ -178,7 +178,7 @@ public class Query implements TObjectFloatProcedure<Object> {
 						if (val == null) { continue; }
 						
 						String valStr = val.toString();
-						score = valStr.length() - Utilities.getCharacterDifference(valStr, queryStr, false);
+						score = valStr.length() - Utilities.getEditDistance(valStr, queryStr);
 						
 						// Increment the score by the ID so it acts as a tie breaker
 						score -= ((Number) session.getIdentifier(o)).floatValue() * 0.0001f;

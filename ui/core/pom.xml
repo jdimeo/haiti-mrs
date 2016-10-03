@@ -13,9 +13,9 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>com.datamininglab</groupId>
-			<artifactId>FoundationSWT-${system.platform}</artifactId>
-			<version>${foundation.version}</version>
+			<groupId>com.datamininglab.viz</groupId>
+			<artifactId>eri-gui-swt-${system.platform}</artifactId>
+			<version>${eri.gui.swt.version}</version>
 			<optional>true</optional>
 		</dependency>
 		<dependency>

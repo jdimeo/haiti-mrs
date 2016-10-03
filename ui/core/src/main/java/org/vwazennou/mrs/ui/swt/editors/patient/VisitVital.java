@@ -8,10 +8,8 @@ import java.util.Date;
 
 import org.vwazennou.mrs.dictionary.Str;
 
+import com.datamininglab.foundation.data.DataStorage;
 import com.datamininglab.foundation.data.field.DataField;
-import com.datamininglab.foundation.data.field.DataFields.DateField;
-import com.datamininglab.foundation.data.field.DataFields.FloatField;
-import com.datamininglab.foundation.data.field.DataFields.StringField;
 
 public class VisitVital {
 	private Str    vital;
@@ -43,10 +41,7 @@ public class VisitVital {
 		return dateStr + " " + vital + ": " + PatientSummary.FLOAT_RENDERER.render(value);
 	}
 	
-	public static final DataField<VisitVital, Date> DATE = new DateField<VisitVital>(Str.DATE) {
-		@Override
-		public Date get(VisitVital row) { return row.getDate(); }
-	};
+	public static final DataField<VisitVital, Date> DATE = DataStorage.DATETIME.newField(vv -> vv.getDate());
 	public static final DataField<VisitVital, Float> VALUE = new FloatField<VisitVital>(Str.VALUE) {
 		@Override
 		public Float get(VisitVital row) { return row.getValue(); }

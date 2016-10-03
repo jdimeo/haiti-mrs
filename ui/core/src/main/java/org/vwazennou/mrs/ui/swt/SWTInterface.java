@@ -63,21 +63,21 @@ import org.vwazennou.mrs.ui.swt.editors.visit.VisitEditor;
 import org.vwazennou.mrs.ui.swt.search.SearchInterface;
 import org.vwazennou.mrs.visit.Visit;
 
+import com.datamininglab.commons.geo.CountryDatabase;
+import com.datamininglab.commons.geo.CountryMetadata;
+import com.datamininglab.commons.icons.eri.IconsFlags;
+import com.datamininglab.commons.lang.ReflectionUtils;
+import com.datamininglab.commons.lang.Utilities;
 import com.datamininglab.commons.logging.LogContext;
-import com.datamininglab.foundation.awt.icons.IconsFlags;
-import com.datamininglab.foundation.awt.util.CountryFlags;
 import com.datamininglab.foundation.data.validation.DataValidator;
-import com.datamininglab.foundation.geo.CountryDatabase;
-import com.datamininglab.foundation.geo.CountryMetadata;
-import com.datamininglab.foundation.swt.controls.StatusBar;
-import com.datamininglab.foundation.swt.dialog.InputBox;
-import com.datamininglab.foundation.swt.dialog.OptionBox;
-import com.datamininglab.foundation.swt.util.ResourceManager;
-import com.datamininglab.foundation.swt.util.SWTUtilities;
-import com.datamininglab.foundation.swt.util.SWTValidator;
-import com.datamininglab.foundation.ui.UIUtilities.UIAction;
-import com.datamininglab.foundation.util.ReflectionUtils;
-import com.datamininglab.foundation.util.Utilities;
+import com.datamininglab.viz.gui.UIAction;
+import com.datamininglab.viz.gui.swt.controls.StatusBar;
+import com.datamininglab.viz.gui.swt.dialog.InputBox;
+import com.datamininglab.viz.gui.swt.dialog.OptionBox;
+import com.datamininglab.viz.gui.swt.util.ResourceManager;
+import com.datamininglab.viz.gui.swt.util.SWTUtilities;
+import com.datamininglab.viz.gui.swt.util.SWTValidator;
+import com.datamininglab.viz.gui.util.CountryFlags;
 
 public class SWTInterface extends MRSInterface implements SelectionListener {
 	private static final Object UI_READY  = new Object();

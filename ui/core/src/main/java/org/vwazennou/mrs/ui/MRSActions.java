@@ -7,10 +7,10 @@ package org.vwazennou.mrs.ui;
 import org.vwazennou.mrs.dictionary.DictionaryEntry.CompoundStr;
 import org.vwazennou.mrs.dictionary.Str;
 
-import com.datamininglab.foundation.awt.icons.IconsERI;
-import com.datamininglab.foundation.awt.icons.IconsMS;
-import com.datamininglab.foundation.awt.icons.IconsSilk;
-import com.datamininglab.foundation.ui.UIUtilities.UIAction;
+import com.datamininglab.commons.icons.eri.IconsERI;
+import com.datamininglab.commons.icons.ms.IconsMS;
+import com.datamininglab.viz.gui.UIAction;
+
 
 public final class MRSActions {
 	private MRSActions() {

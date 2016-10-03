@@ -4,11 +4,6 @@
  */
 package org.vwazennou.mrs.dictionary;
 
-import gnu.trove.map.hash.TIntObjectHashMap;
-import gnu.trove.procedure.TIntObjectProcedure;
-import gnu.trove.procedure.TObjectProcedure;
-import gnu.trove.set.hash.TIntHashSet;
-
 import java.lang.reflect.Field;
 import java.util.Collection;
 import java.util.Collections;
@@ -21,14 +16,19 @@ import java.util.Set;
 import org.hibernate.Session;
 import org.vwazennou.mrs.data.Option;
 
-import com.datamininglab.foundation.data.lut.LookupTable;
-import com.datamininglab.foundation.util.ReflectionUtils;
+import com.datamininglab.commons.lang.ReflectionUtils;
+import com.datamininglab.commons.structs.lut.LookupTable;
+
+import gnu.trove.map.hash.TIntObjectHashMap;
+import gnu.trove.procedure.TIntObjectProcedure;
+import gnu.trove.procedure.TObjectProcedure;
+import gnu.trove.set.hash.TIntHashSet;
 
 public class Dictionary {
 	private Session session;
 	private Language language;
 	
-	private LookupTable<Language, String> languages;
+	private LookupTable<String, Language> languages;
 	private TIntObjectHashMap<DictionaryEntry> entries = new TIntObjectHashMap<>();
 	private TIntHashSet deleted = new TIntHashSet();
 	
@@ -143,7 +143,7 @@ public class Dictionary {
 	 * @return all available languages for the system
 	 */
 	public Collection<Language> getSupportedLanguages() {
-		List<Language> ret = languages.getValues();
+		List<Language> ret = languages.values();
 		Collections.sort(ret, LANG_SORTER);
 		return ret;
 	}

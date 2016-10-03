@@ -10,7 +10,7 @@ import org.vwazennou.mrs.dictionary.Str;
 import org.vwazennou.mrs.script.DirectiveText;
 import org.vwazennou.mrs.script.Prescription;
 
-import com.datamininglab.foundation.ui.UserInterface;
+import com.datamininglab.viz.gui.UserInterface;
 
 public abstract class MRSInterface implements UserInterface {
 	private MRSController c;

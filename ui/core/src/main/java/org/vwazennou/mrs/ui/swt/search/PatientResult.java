@@ -15,11 +15,10 @@ import org.vwazennou.mrs.search.SearchFieldRegistry;
 import org.vwazennou.mrs.ui.MRSActions;
 import org.vwazennou.mrs.visit.Visit;
 
-import com.datamininglab.foundation.awt.icons.IconsMS;
-import com.datamininglab.foundation.awt.icons.IconsMed;
-import com.datamininglab.foundation.awt.icons.IconsSilk;
-import com.datamininglab.foundation.swt.util.ResourceManager;
-import com.datamininglab.foundation.ui.UIUtilities.UIAction;
+import com.datamininglab.commons.icons.eri.IconsMed;
+import com.datamininglab.commons.icons.ms.IconsMS;
+import com.datamininglab.viz.gui.UIAction;
+import com.datamininglab.viz.gui.swt.util.ResourceManager;
 
 public class PatientResult extends SearchResult<Patient> {
 	private static final int COL2_WIDTH = 128;

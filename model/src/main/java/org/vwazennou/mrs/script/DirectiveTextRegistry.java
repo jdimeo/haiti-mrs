@@ -10,7 +10,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.hibernate.Session;
 import org.vwazennou.mrs.dictionary.Language;
 
-import com.datamininglab.foundation.util.Structures.TwoKeyHashMap;
+import com.datamininglab.commons.structs.TwoKeyHashMap;
 
 public class DirectiveTextRegistry {
 	private TwoKeyHashMap<Integer, Language, DirectiveText> textMap;

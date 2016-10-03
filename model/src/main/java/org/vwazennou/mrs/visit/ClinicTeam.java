@@ -20,9 +20,8 @@ import org.hibernate.Session;
 import org.vwazennou.mrs.MRSMergable;
 import org.vwazennou.mrs.data.Client;
 
-import com.datamininglab.foundation.data.hash.DataHashes;
-import com.datamininglab.foundation.data.lut.LookupTable;
-import com.datamininglab.foundation.orm.LUTHibernateCache;
+import com.datamininglab.commons.hash.DataHashes;
+import com.datamininglab.commons.structs.lut.LookupTable;
 
 @Entity
 @Table(name = "clinic_teams")
@@ -89,7 +88,7 @@ public class ClinicTeam implements MRSMergable {
 		return name.hashCode();
 	}
 	
-	public static LookupTable<ClinicTeam, String> getAll(Session session) {
+	public static LookupTable<String, ClinicTeam> getAll(Session session) {
 		return new LookupTable<>(ClinicTeam.class, "name", DataHashes.STRING_HASH)
 				.setCache(new LUTHibernateCache<ClinicTeam, String>(session)).fill();
 	}

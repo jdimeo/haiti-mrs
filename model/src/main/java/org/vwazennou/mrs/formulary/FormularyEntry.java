@@ -29,9 +29,8 @@ import org.apache.commons.lang3.math.NumberUtils;
 import org.hibernate.Session;
 import org.hibernate.annotations.Cascade;
 
-import com.datamininglab.foundation.util.CRC64;
-import com.datamininglab.foundation.util.HashUtils;
-import com.datamininglab.foundation.util.Utilities;
+import com.datamininglab.commons.hash.HashUtils;
+import com.datamininglab.commons.lang.Utilities;
 
 @Entity
 @Table(name = "formulary_entries")
@@ -162,6 +161,6 @@ public class FormularyEntry implements Comparable<FormularyEntry> {
 	
 	@Override
 	public int hashCode() {
-		return (int) (getType().ordinal() * HashUtils.HASH_COEFF + CRC64.getCRC64(toString()));
+		return (int) HashUtils.buildHash(getType().ordinal(), HashUtils.getCRC64(toString()));
 	}
 }

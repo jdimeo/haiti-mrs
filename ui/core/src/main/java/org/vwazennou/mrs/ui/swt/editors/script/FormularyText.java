@@ -21,7 +21,7 @@ import org.vwazennou.mrs.formulary.Formulary;
 import org.vwazennou.mrs.formulary.FormularyEntry;
 import org.vwazennou.mrs.formulary.FormularyEntry.FormularyEntryType;
 
-import com.datamininglab.foundation.swt.util.SWTUtilities;
+import com.datamininglab.viz.gui.swt.util.SWTUtilities;
 
 public class FormularyText {
 	private Text text;

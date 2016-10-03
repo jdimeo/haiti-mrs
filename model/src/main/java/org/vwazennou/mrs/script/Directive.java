@@ -22,9 +22,8 @@ import javax.persistence.Table;
 import org.hibernate.Session;
 import org.hibernate.annotations.Cascade;
 
-import com.datamininglab.foundation.data.hash.DataHashes;
-import com.datamininglab.foundation.data.lut.LookupTable;
-import com.datamininglab.foundation.orm.LUTHibernateCache;
+import com.datamininglab.commons.hash.DataHashes;
+import com.datamininglab.commons.structs.lut.LookupTable;
 
 @Entity @Table(name = "directives")
 public class Directive implements Comparable<Directive> {
@@ -68,8 +67,8 @@ public class Directive implements Comparable<Directive> {
 		return Integer.compare(getCode(), o.getCode());
 	}
 	
-	public static LookupTable<Directive, Integer> getAll(Session session) {
-		return new LookupTable<Directive, Integer>(Directive.class, "code", DataHashes.INTEGER_HASH)
+	public static LookupTable<Integer, Directive> getAll(Session session) {
+		return new LookupTable<Directive, Integer>(Directive.class, "code", DataHashes.INT_HASH)
 				.setCache(new LUTHibernateCache<Directive, Integer>(session)).fill();
 	}
 }

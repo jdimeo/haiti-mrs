@@ -11,8 +11,8 @@ import java.util.Locale;
 
 import org.vwazennou.mrs.dictionary.Str;
 
+import com.datamininglab.commons.lang.StatusMonitor;
 import com.datamininglab.commons.logging.LogContext;
-import com.datamininglab.foundation.ui.StatusMonitor;
 
 import jxl.Workbook;
 import jxl.WorkbookSettings;

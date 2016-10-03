@@ -7,20 +7,6 @@ package org.vwazennou.mrs.task.excel;
 import java.io.IOException;
 import java.util.List;
 
-import jxl.SheetSettings;
-import jxl.format.Border;
-import jxl.format.BorderLineStyle;
-import jxl.format.CellFormat;
-import jxl.format.Colour;
-import jxl.write.DateFormat;
-import jxl.write.DateTime;
-import jxl.write.Label;
-import jxl.write.WritableCellFormat;
-import jxl.write.WritableFont;
-import jxl.write.WritableSheet;
-import jxl.write.WritableWorkbook;
-import jxl.write.WriteException;
-
 import org.apache.commons.lang3.StringUtils;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
@@ -36,8 +22,22 @@ import org.vwazennou.mrs.visit.Visit;
 import org.vwazennou.mrs.visit.VisitText;
 import org.vwazennou.mrs.visit.VisitText.VisitTextType;
 
-import com.datamininglab.foundation.text.UnicodeChars;
-import com.datamininglab.foundation.ui.StatusMonitor;
+import com.datamininglab.commons.lang.StatusMonitor;
+import com.datamininglab.commons.lang.utf.UnicodeChars;
+
+import jxl.SheetSettings;
+import jxl.format.Border;
+import jxl.format.BorderLineStyle;
+import jxl.format.CellFormat;
+import jxl.format.Colour;
+import jxl.write.DateFormat;
+import jxl.write.DateTime;
+import jxl.write.Label;
+import jxl.write.WritableCellFormat;
+import jxl.write.WritableFont;
+import jxl.write.WritableSheet;
+import jxl.write.WritableWorkbook;
+import jxl.write.WriteException;
 
 public class DataExport extends ExcelReport {
 	private static final int FONT_SIZE  = 9;

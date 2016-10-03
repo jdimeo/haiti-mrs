@@ -24,8 +24,6 @@ import org.eclipse.swt.widgets.Text;
 import org.eclipse.swt.widgets.ToolBar;
 import org.vwazennou.mrs.dictionary.Dictionary;
 import org.vwazennou.mrs.dictionary.DictionaryEntry;
-import org.vwazennou.mrs.dictionary.DictionaryEntry.KeyField;
-import org.vwazennou.mrs.dictionary.DictionaryEntry.ValueField;
 import org.vwazennou.mrs.dictionary.Language;
 import org.vwazennou.mrs.dictionary.Str;
 import org.vwazennou.mrs.ui.MRSActions;
@@ -35,12 +33,13 @@ import org.vwazennou.mrs.ui.swt.MRSView.MRSViewable;
 import org.vwazennou.mrs.ui.swt.SWTInterface;
 import org.vwazennou.mrs.ui.swt.TextRefreshDelegate;
 
-import com.datamininglab.foundation.awt.icons.IconsMS;
-import com.datamininglab.foundation.swt.controls.data.DataTable;
-import com.datamininglab.foundation.swt.dialog.InputBox;
-import com.datamininglab.foundation.swt.util.ResourceManager;
-import com.datamininglab.foundation.swt.util.SWTUtilities;
-import com.datamininglab.foundation.ui.UIUtilities.UIAction;
+import com.datamininglab.commons.icons.ms.IconsMS;
+import com.datamininglab.viz.gui.UIAction;
+import com.datamininglab.viz.gui.swt.controls.data.DataTable;
+import com.datamininglab.viz.gui.swt.dialog.InputBox;
+import com.datamininglab.viz.gui.swt.util.GridDataBuilder;
+import com.datamininglab.viz.gui.swt.util.ResourceManager;
+import com.datamininglab.viz.gui.swt.util.SWTUtilities;
 
 public class DictionaryEditor extends Composite implements SelectionListener, MRSViewable {
 	private static final int DEF_COL_WIDTH = 200;
@@ -89,9 +88,8 @@ public class DictionaryEditor extends Composite implements SelectionListener, MR
 		
 		final Button add = new Button(this, SWT.PUSH);
 		add.setData(SWTInterface.TEXT, Str.OK);
-		GridData gd = new GridData(SWT.RIGHT, SWT.FILL, false, false, 2, 1);
-		gd.widthHint = SWTUtilities.DEFAULT_BUTTON_WIDTH;
-		add.setLayoutData(gd);
+		GridDataBuilder.button().hAlign(SWT.RIGHT).vAlign(SWT.FILL).hSpan(2).apply(add);
+		
 		add.setEnabled(false);
 		add.addSelectionListener(new SelectionAdapter() {
 			@Override

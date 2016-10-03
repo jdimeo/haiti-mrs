@@ -23,8 +23,6 @@ import org.apache.commons.lang3.StringUtils;
 import org.vwazennou.mrs.MRSMergable;
 import org.vwazennou.mrs.data.Client;
 
-import com.datamininglab.foundation.data.field.DataFields.StringField;
-
 @Entity
 @Table(name = "dictionary")
 public class DictionaryEntry implements Comparable<DictionaryEntry>, MRSMergable {
@@ -100,44 +98,6 @@ public class DictionaryEntry implements Comparable<DictionaryEntry>, MRSMergable
 		
 		// The user has now edited this entry, so it is no longer temporary
 		temp = false;
-	}
-	
-	public static class KeyField extends StringField<DictionaryEntry> {
-		public KeyField() { super(null); }
-		
-		@Override
-		public String get(DictionaryEntry row) {
-			if (globalDict == null) {
-				return row.getKey().getDefault();
-			}
-			return globalDict.getPhrase(row.getKey());
-		}
-		@Override
-		public String getName() {
-			if (globalDict == null || globalDict.getLanguage() == null) {
-				return "Default";
-			}
-			return globalDict.getLanguage().getName();
-		}
-	}
-	
-	public static class ValueField extends StringField<DictionaryEntry> {
- 		public ValueField() { super(null); }
- 		
-		private Language lang;
-		@Override
-		public String get(DictionaryEntry row) {
-			return row.isTemporary()? "-" : row.getWord();
-		}
-		@Override
-		public void set(DictionaryEntry row, String word) {
-			row.setWord(word);
-		}
-		@Override
-		public String getName() {
-			return lang == null? "Translated phrase" : lang.getName();
-		}
-		public void setLanguage(Language l) { lang = l; }
 	}
 	
 	@Override

@@ -26,11 +26,10 @@ import org.vwazennou.mrs.visit.UrineTest.Leukocytes;
 import org.vwazennou.mrs.visit.UrineTest.Nitrite;
 import org.vwazennou.mrs.visit.UrineTest.Protein;
 
-import com.datamininglab.foundation.awt.icons.IconsERI;
-import com.datamininglab.foundation.awt.icons.IconsMS;
-import com.datamininglab.foundation.swt.util.SWTUtilities;
-import com.datamininglab.foundation.ui.UserInterface.MessageType;
-
+import com.datamininglab.commons.icons.eri.IconsERI;
+import com.datamininglab.commons.icons.ms.IconsMS;
+import com.datamininglab.viz.gui.UserInterface.MessageType;
+import com.datamininglab.viz.gui.swt.util.SWTUtilities;
 
 public class UrineEditor implements SelectionListener {
 	private VisitEditor ve;

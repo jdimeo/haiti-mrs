@@ -24,8 +24,8 @@ import org.vwazennou.mrs.script.Prescription;
 import org.vwazennou.mrs.visit.Visit;
 import org.vwazennou.mrs.visit.VisitText;
 
-import com.datamininglab.foundation.ui.StatusListener.DefaultStatusListener;
-import com.datamininglab.foundation.ui.StatusMonitor;
+import com.datamininglab.commons.lang.StatusListener.DefaultStatusListener;
+import com.datamininglab.commons.lang.StatusMonitor;
 
 import gnu.trove.iterator.TLongObjectIterator;
 import gnu.trove.map.hash.TLongObjectHashMap;

@@ -4,10 +4,6 @@
  */
 package org.vwazennou.mrs.patient;
 
-import static org.vwazennou.mrs.dictionary.Str.contains;
-import static org.vwazennou.mrs.dictionary.Str.toBoolean;
-import static org.vwazennou.mrs.dictionary.Str.toStr;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
@@ -40,7 +36,7 @@ import org.vwazennou.mrs.dictionary.Str;
 import org.vwazennou.mrs.formulary.Formulary;
 import org.vwazennou.mrs.visit.Visit;
 
-import com.datamininglab.foundation.util.Utilities;
+import com.datamininglab.commons.lang.Utilities;
 
 @Entity
 @Table(name = "patients")
@@ -207,23 +203,23 @@ public class Patient implements ParentOf<Visit>, Comparable<Patient>, MRSMergabl
 	public void    setEmail(String email)            { this.email = email; }
 	
 	public Str     getGender()                       { return gender; }
-	public void    setGender(Str gender)             { this.gender = contains(GENDERS, gender); }
+	public void    setGender(Str gender)             { this.gender = Str.contains(GENDERS, gender); }
 	
 	public Str     getMaritalStatus()                { return maritalStatus; }
-	public void    setMaritalStatus(Str ms)          { maritalStatus = contains(MARITAL_STATUSES, ms); }
+	public void    setMaritalStatus(Str ms)          { maritalStatus = Str.contains(MARITAL_STATUSES, ms); }
 	
 	public Date    getBirthdate()                    { return new Date(birthDate); }
 	public long    getBirthdateInMillis()            { return birthDate; }
 	public void    setBirthdate(Date dob)            { this.birthDate = dob.getTime(); }
 	
-	public boolean isDeceased()                      { return toBoolean(isDeceased); }
-	public void    setDeceased(boolean deceased)     { this.isDeceased = toStr(deceased); }
+	public boolean isDeceased()                      { return Str.toBoolean(isDeceased); }
+	public void    setDeceased(boolean deceased)     { this.isDeceased = Str.toStr(deceased); }
 	
-	public boolean isChurchMember()                  { return toBoolean(isChurchMember); }
-	public void    setChurchMember(boolean member)   { this.isChurchMember = toStr(member); }
+	public boolean isChurchMember()                  { return Str.toBoolean(isChurchMember); }
+	public void    setChurchMember(boolean member)   { this.isChurchMember = Str.toStr(member); }
 	
-	public boolean isFollowedByLADS()                { return toBoolean(isFollowedByLADS); }
-	public void    setFollowedByLADS(boolean lads)   { this.isFollowedByLADS = toStr(lads); }
+	public boolean isFollowedByLADS()                { return Str.toBoolean(isFollowedByLADS); }
+	public void    setFollowedByLADS(boolean lads)   { this.isFollowedByLADS = Str.toStr(lads); }
 	
 	public int     getNumberOfChildren()             { return children; }
 	public void    setNumberOfChildren(int children) { this.children = children; }
@@ -302,10 +298,10 @@ public class Patient implements ParentOf<Visit>, Comparable<Patient>, MRSMergabl
 	}
 
 	public boolean hasCondition(Str condition) {
-		return Utilities.isOn(conditions, contains(MEDICAL_CONDITIONS, condition));
+		return Utilities.isOn(conditions, Str.contains(MEDICAL_CONDITIONS, condition));
 	}
 	public void setCondition(Str condition, boolean hasCondition) {
-		long flag = 1L << contains(MEDICAL_CONDITIONS, condition).ordinal();
+		long flag = 1L << Str.contains(MEDICAL_CONDITIONS, condition).ordinal();
 		if (hasCondition) {
 			conditions = conditions | flag;
 		} else {

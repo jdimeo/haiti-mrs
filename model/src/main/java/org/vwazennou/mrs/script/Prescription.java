@@ -36,8 +36,8 @@ import org.vwazennou.mrs.formulary.Formulary;
 import org.vwazennou.mrs.formulary.FormularyEntry;
 import org.vwazennou.mrs.visit.Visit;
 
-import com.datamininglab.foundation.text.UnicodeChars;
-import com.datamininglab.foundation.util.Utilities;
+import com.datamininglab.commons.lang.Utilities;
+import com.datamininglab.commons.lang.utf.UnicodeChars;
 
 @Entity
 @Table(name = "prescriptions")

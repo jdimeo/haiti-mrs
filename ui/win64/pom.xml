@@ -17,18 +17,11 @@
 			<artifactId>HaitiMRS-ui-core</artifactId>
 			<version>${project.version}</version>
 		</dependency>
-		<dependency>
-			<groupId>com.datamininglab</groupId>
-			<artifactId>FoundationSWT-win64</artifactId>
-			<version>${foundation.version}</version>
-
-			<exclusions>
-				<exclusion>
-					<groupId>org.prefuse</groupId>
-					<artifactId>prefuse</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
+        <dependency>
+            <groupId>com.datamininglab.viz</groupId>
+            <artifactId>eri-gui-swt-win64</artifactId>
+            <version>${eri.gui.swt.version}</version>
+        </dependency>
 	</dependencies>
 
 	<build>

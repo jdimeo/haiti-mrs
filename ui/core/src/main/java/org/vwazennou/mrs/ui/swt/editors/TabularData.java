@@ -31,34 +31,29 @@ import org.vwazennou.mrs.ui.swt.SWTInterface;
 import org.vwazennou.mrs.visit.ClinicTeam;
 import org.vwazennou.mrs.visit.Visit;
 
-import com.datamininglab.foundation.awt.icons.IconsMS;
-import com.datamininglab.foundation.awt.icons.IconsMed;
+import com.datamininglab.commons.icons.eri.IconsMed;
+import com.datamininglab.commons.icons.ms.IconsMS;
+import com.datamininglab.commons.lang.Utilities;
+import com.datamininglab.commons.lang.utf.UnicodeChars;
 import com.datamininglab.foundation.data.DataList;
 import com.datamininglab.foundation.data.field.DataFields.BaseEnumField;
-import com.datamininglab.foundation.data.field.DataFields.DateField;
-import com.datamininglab.foundation.data.field.DataFields.FloatField;
-import com.datamininglab.foundation.data.field.DataFields.IntField;
-import com.datamininglab.foundation.data.field.DataFields.LongField;
-import com.datamininglab.foundation.data.field.DataFields.ObjectField;
-import com.datamininglab.foundation.data.field.DataFields.StringField;
+import com.datamininglab.foundation.data.render.DataRenderers;
 import com.datamininglab.foundation.data.render.DataRenderers.DateRenderer;
 import com.datamininglab.foundation.data.render.DataRenderers.FloatRenderer;
 import com.datamininglab.foundation.data.render.DataRenderers.IntRenderer;
 import com.datamininglab.foundation.data.render.DataRenderers.LongRenderer;
 import com.datamininglab.foundation.data.render.DataRenderers.StringRenderer;
-import com.datamininglab.foundation.swt.controls.data.DataTable;
-import com.datamininglab.foundation.swt.util.ResourceManager;
-import com.datamininglab.foundation.swt.util.SWTUtilities;
-import com.datamininglab.foundation.text.UnicodeChars;
-import com.datamininglab.foundation.ui.UIUtilities.UIAction;
-import com.datamininglab.foundation.util.Utilities;
+import com.datamininglab.viz.gui.UIAction;
+import com.datamininglab.viz.gui.swt.controls.data.DataTable;
+import com.datamininglab.viz.gui.swt.util.ResourceManager;
+import com.datamininglab.viz.gui.swt.util.SWTUtilities;
 
 public class TabularData extends Composite implements MRSViewable, SelectionListener {
 	private static final String NULL = "-";
 	private static final StringRenderer<String>  STRING_RENDERER = new StringRenderer<>(NULL);
-	private static final StringRenderer<Long>    LONG_RENDERER   = new LongRenderer(true, NULL);
-	private static final StringRenderer<Integer> INT_RENDERER    = new IntRenderer(true, NULL);
-	private static final FloatRenderer           FLOAT_RENDERER  = new FloatRenderer("2.1", NULL);
+	private static final StringRenderer<Long>    LONG_RENDERER   = new LongRenderer(DataRenderers.DEF_INT_FORMAT, NULL);
+	private static final StringRenderer<Integer> INT_RENDERER    = new IntRenderer(DataRenderers.DEF_INT_FORMAT, NULL);
+	private static final FloatRenderer           FLOAT_RENDERER  = new FloatRenderer("%.1f", NULL);
 	private static final DateRenderer            DATE_RENDERER   = new DateRenderer("dd/MM/yyyy", NULL) {
 		@Override
 		public String render(Date in) {
@@ -123,17 +118,9 @@ public class TabularData extends Composite implements MRSViewable, SelectionList
 	
 	private <T> void queryAll(Class<T> c, Criterion crit, final DataTable<T> table) {
 		SWTUtilities.setTopControl(table.getControl());
-		ui.getController().new QueryAll<>(c, crit, new QueryAllCallback<T>() {
-			@Override
-			public void handleResults(final List<T> list) {
-				table.setData(new DataList<>(list));
-				SWTUtilities.run(getDisplay(), new Runnable() {
-					@Override
-					public void run() {
-						ui.setSubtitle(INT_RENDERER.render(list.size()) + " " + Str.MATCHES);
-					}
-				});
-			}
+		ui.getController().new QueryAll<>(c, crit, list -> {
+			table.setData(new DataList<>(list));
+			SWTUtilities.run(getDisplay(), () -> ui.setSubtitle(INT_RENDERER.render(list.size()) + " " + Str.MATCHES));
 		});
 	}
 	

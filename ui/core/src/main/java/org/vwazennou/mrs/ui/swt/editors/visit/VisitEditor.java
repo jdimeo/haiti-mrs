@@ -6,8 +6,9 @@ package org.vwazennou.mrs.ui.swt.editors.visit;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Date;
+import java.util.Objects;
 
-import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.mutable.MutableInt;
 import org.apache.commons.lang3.text.WordUtils;
@@ -55,19 +56,20 @@ import org.vwazennou.mrs.visit.UrineTest;
 import org.vwazennou.mrs.visit.Visit;
 import org.vwazennou.mrs.visit.VisitText.VisitTextType;
 
+import com.datamininglab.commons.hash.HashUtils;
+import com.datamininglab.commons.lang.utf.UnicodeChars;
 import com.datamininglab.foundation.data.validation.DataValidators.ChainedValidator;
 import com.datamininglab.foundation.data.validation.DataValidators.IntegralValidator;
 import com.datamininglab.foundation.data.validation.DataValidators.NumericValidator;
 import com.datamininglab.foundation.data.validation.DataValidators.RangeValidator;
-import com.datamininglab.foundation.swt.controls.DatePicker;
-import com.datamininglab.foundation.swt.util.ResourceManager;
-import com.datamininglab.foundation.swt.util.SWTUtilities;
-import com.datamininglab.foundation.text.UnicodeChars;
-import com.datamininglab.foundation.ui.UIUtilities.UIAction;
-import com.datamininglab.foundation.ui.UserInterface.MessageType;
-import com.datamininglab.foundation.util.CRC64;
+import com.datamininglab.viz.gui.UIAction;
+import com.datamininglab.viz.gui.UserInterface.MessageType;
+import com.datamininglab.viz.gui.swt.controls.DatePicker;
+import com.datamininglab.viz.gui.swt.util.ResourceManager;
+import com.datamininglab.viz.gui.swt.util.SWTUtilities;
 
 import gnu.trove.map.hash.TIntLongHashMap;
+import oracle.jdbc.driver.CRC64;
 
 public class VisitEditor extends Composite implements SelectionListener, Editor<Patient, Visit, ClinicTeam>, QueryCallback, Runnable, MRSViewable {
 	private SWTInterface ui;
@@ -508,7 +510,7 @@ public class VisitEditor extends Composite implements SelectionListener, Editor<
 	
 	private void setTextIfChanged(VisitTextType type, String text) {
 		long prevHash = textHashes.get(type.ordinal());
-		long currHash = CRC64.getCRC64(text);
+		long currHash = HashUtils.getCRC64(text);
 		if (currHash != prevHash) {
 			visit.setText(type, ui.getCurrentLanguage(), text);
 		}
@@ -530,8 +532,8 @@ public class VisitEditor extends Composite implements SelectionListener, Editor<
 		SWTUtilities.select(strep,   v.getStrepResult());
 		updateUrineTest(v.getUrineTestResult());
 		
-		long d = v.getDateInMillis();
-		date.setSelection(d == Visit.DEFAULT_DATE? System.currentTimeMillis() : d);
+		Date d = v.getDate();
+		date.setSelection(d.getTime() == Visit.DEFAULT_DATE? new Date() : d);
 		
 		setInt(systolic,      v.getSystolic());
 		setInt(diastolic,     v.getDiastolic());
@@ -804,8 +806,8 @@ public class VisitEditor extends Composite implements SelectionListener, Editor<
 		}
 		@Override
 		public String toString() {
-			String s = ObjectUtils.toString(v.getText(type, ui.getCurrentLanguage()));
-			textHashes.put(type.ordinal(), CRC64.getCRC64(s));
+			String s = Objects.toString(v.getText(type, ui.getCurrentLanguage()));
+			textHashes.put(type.ordinal(), HashUtils.getCRC64(s));
 			return s;
 		}
 	}

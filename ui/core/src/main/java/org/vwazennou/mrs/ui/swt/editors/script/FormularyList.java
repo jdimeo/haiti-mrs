@@ -19,7 +19,7 @@ import org.vwazennou.mrs.formulary.FormularyEntry;
 import org.vwazennou.mrs.formulary.FormularyEntry.FormularyEntryType;
 import org.vwazennou.mrs.ui.swt.SWTInterface;
 
-import com.datamininglab.foundation.swt.util.SWTUtilities;
+import com.datamininglab.viz.gui.swt.util.SWTUtilities;
 
 public class FormularyList implements FocusListener {
 	private SWTInterface ui;

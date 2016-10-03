@@ -14,11 +14,11 @@ import java.util.Set;
 import org.hibernate.Session;
 import org.vwazennou.mrs.data.Database;
 import org.vwazennou.mrs.formulary.FormularyEntry;
+import org.vwazennou.mrs.formulary.FormularyEntry.FormularyEntryType;
 import org.vwazennou.mrs.formulary.FormularyEntryPart;
 import org.vwazennou.mrs.formulary.FormularyTuple;
-import org.vwazennou.mrs.formulary.FormularyEntry.FormularyEntryType;
 
-import com.datamininglab.foundation.util.Utilities;
+import com.datamininglab.commons.lang.Utilities;
 
 public final class FDAParser {
 	private static final int FORM_COL      = 2;
@@ -57,47 +57,47 @@ public final class FDAParser {
 		tuples = new HashSet<>(); 
 		
 		for (String file : FILE_LIST) {
-			Scanner s = new Scanner(new File(file));
-			s.nextLine(); // headers
-			while (s.hasNextLine()) {
-				String line = s.nextLine().toUpperCase();
-				String[] arr = split(line, "\t");
-				
-				if (arr[DOSAGE_COL].isEmpty() || "0".equals(arr[DOSAGE_COL])) {
-					arr[DOSAGE_COL] = "N/A";
-				}
-				
-				String[] frmArr = split(arr[FORM_COL], ";");
-				FormularyEntry frm = (frmArr.length == 0)? null
-					               : buildEntry(FormularyEntryType.FORM,      frmArr[0]);
-				FormularyEntry dos = buildEntry(FormularyEntryType.DOSAGE,    arr[DOSAGE_COL]);
-				FormularyEntry trt = buildEntry(FormularyEntryType.TREATMENT, arr[TREATMENT_COL]);
-				
-				tuples.add(new FormularyTuple(trt, dos, frm));
-				
-				if (frmArr.length > 1) {
-					String[] roaArr = frmArr[1].split(", ?");
-					for (int i = 0; i < roaArr.length; i++) {
-						buildEntry(FormularyEntryType.ROUTE_OF_ADMINISTRATION, roaArr[i]);
+			try (Scanner s = new Scanner(new File(file))) {
+				s.nextLine(); // headers
+				while (s.hasNextLine()) {
+					String line = s.nextLine().toUpperCase();
+					String[] arr = split(line, "\t");
+					
+					if (arr[DOSAGE_COL].isEmpty() || "0".equals(arr[DOSAGE_COL])) {
+						arr[DOSAGE_COL] = "N/A";
 					}
+					
+					String[] frmArr = split(arr[FORM_COL], ";");
+					FormularyEntry frm = (frmArr.length == 0)? null
+						               : buildEntry(FormularyEntryType.FORM,      frmArr[0]);
+					FormularyEntry dos = buildEntry(FormularyEntryType.DOSAGE,    arr[DOSAGE_COL]);
+					FormularyEntry trt = buildEntry(FormularyEntryType.TREATMENT, arr[TREATMENT_COL]);
+					
+					tuples.add(new FormularyTuple(trt, dos, frm));
+					
+					if (frmArr.length > 1) {
+						String[] roaArr = frmArr[1].split(", ?");
+						for (int i = 0; i < roaArr.length; i++) {
+							buildEntry(FormularyEntryType.ROUTE_OF_ADMINISTRATION, roaArr[i]);
+						}
+					}
+					
+					String name = arr[DRUGNAME_COL];
+					if (name.equals(arr[TREATMENT_COL])) { continue; }
+					
+					name = name.replace('-', ' ');			
+					for (int i = 0; i < ALIAS_BLACKLIST.length; i++) {
+						int j = name.indexOf(ALIAS_BLACKLIST[i]);
+						if (j > 0) { name = name.substring(0, j); }
+					}
+					
+					// Strip trailing non-alpha chars (e.g. 0.1%), since we want to isolate brand names
+					name = name.replaceAll("[^A-Z]+$", "");
+					if (name.length() < 4) { continue; }
+					
+					trt.addAlias(buildEntry(FormularyEntryType.TREATMENT_ALIAS, name));
 				}
-				
-				String name = arr[DRUGNAME_COL];
-				if (name.equals(arr[TREATMENT_COL])) { continue; }
-				
-				name = name.replace('-', ' ');			
-				for (int i = 0; i < ALIAS_BLACKLIST.length; i++) {
-					int j = name.indexOf(ALIAS_BLACKLIST[i]);
-					if (j > 0) { name = name.substring(0, j); }
-				}
-				
-				// Strip trailing non-alpha chars (e.g. 0.1%), since we want to isolate brand names
-				name = name.replaceAll("[^A-Z]+$", "");
-				if (name.length() < 4) { continue; }
-				
-				trt.addAlias(buildEntry(FormularyEntryType.TREATMENT_ALIAS, name));
 			}
-			s.close();
 		}
 		
 		Collection<FormularyEntry> set = map.values();
@@ -160,13 +160,10 @@ public final class FDAParser {
 		return arr;
 	}
 	
-	private static final Comparator<FormularyEntry> ENTRY_SORTER = new Comparator<FormularyEntry>() {
-		@Override
-		public int compare(FormularyEntry o1, FormularyEntry o2) {
-			if (!o1.isCompound() &&  o2.isCompound()) { return -1; }
-			if (o1.isCompound() && !o2.isCompound()) { return 1; }
-			return o1.toString().compareTo(o2.toString());
-		}
+	private static final Comparator<FormularyEntry> ENTRY_SORTER = (o1, o2) -> {
+		if (!o1.isCompound() &&  o2.isCompound()) { return -1; }
+		if (o1.isCompound() && !o2.isCompound()) { return 1; }
+		return o1.toString().compareTo(o2.toString());
 	};
 	
 	public static void main(String[] args) throws FileNotFoundException {

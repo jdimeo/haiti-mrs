@@ -8,6 +8,8 @@ import java.util.Calendar;
 import java.util.Collection;
 import java.util.Date;
 
+import javax.naming.ldap.PagedResultsControl;
+
 import org.apache.commons.lang3.ArrayUtils;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.ScrolledComposite;
@@ -34,10 +36,11 @@ import org.vwazennou.mrs.ui.swt.SWTInterface;
 import org.vwazennou.mrs.ui.swt.editors.Editor;
 import org.vwazennou.mrs.ui.swt.editors.EnumEditor;
 
-import com.datamininglab.foundation.swt.controls.DatePicker;
-import com.datamininglab.foundation.swt.util.ResourceManager;
-import com.datamininglab.foundation.swt.util.SWTUtilities;
-import com.datamininglab.foundation.ui.UIUtilities.UIAction;
+import com.datamininglab.viz.gui.UIAction;
+import com.datamininglab.viz.gui.swt.controls.DatePicker;
+import com.datamininglab.viz.gui.swt.util.ResourceManager;
+import com.datamininglab.viz.gui.swt.util.SWTUtilities;
+
 
 public class PatientEditor extends Composite implements Editor<Object, Patient, PatientGroup>, MRSViewable {
 	private SWTInterface ui;
@@ -256,7 +259,7 @@ public class PatientEditor extends Composite implements Editor<Object, Patient, 
 		
 		SWTUtilities.select(group, p.getPatientGroup());
 		
-		dobPicker.setSelection(p.getBirthdateInMillis());
+		dobPicker.setSelection(p.getBirthdate());
 		birthYear.setSelection(dobPicker.getSelection(Calendar.YEAR));
 		
 		float age = p.getAge();

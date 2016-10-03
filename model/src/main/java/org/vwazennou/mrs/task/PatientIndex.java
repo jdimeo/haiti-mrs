@@ -15,8 +15,8 @@ import org.vwazennou.mrs.data.Database;
 import org.vwazennou.mrs.dictionary.Str;
 import org.vwazennou.mrs.patient.Patient;
 
+import com.datamininglab.commons.lang.StatusMonitor;
 import com.datamininglab.commons.logging.LogContext;
-import com.datamininglab.foundation.ui.StatusMonitor;
 import com.itextpdf.text.BaseColor;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;

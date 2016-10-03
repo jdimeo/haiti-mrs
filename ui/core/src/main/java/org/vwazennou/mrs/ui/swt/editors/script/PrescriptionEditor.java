@@ -19,13 +19,9 @@ import org.eclipse.swt.events.ControlEvent;
 import org.eclipse.swt.events.FocusAdapter;
 import org.eclipse.swt.events.FocusEvent;
 import org.eclipse.swt.events.FocusListener;
-import org.eclipse.swt.events.ModifyEvent;
-import org.eclipse.swt.events.ModifyListener;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.events.SelectionListener;
-import org.eclipse.swt.events.TraverseEvent;
-import org.eclipse.swt.events.TraverseListener;
 import org.eclipse.swt.graphics.Point;
 import org.eclipse.swt.layout.FormAttachment;
 import org.eclipse.swt.layout.FormData;
@@ -59,12 +55,12 @@ import org.vwazennou.mrs.ui.swt.SWTInterface;
 import org.vwazennou.mrs.ui.swt.editors.Editor;
 import org.vwazennou.mrs.visit.Visit;
 
+import com.datamininglab.commons.lang.Utilities;
 import com.datamininglab.foundation.data.validation.DataValidators.NumericValidator;
-import com.datamininglab.foundation.swt.util.ResourceManager;
-import com.datamininglab.foundation.swt.util.SWTUtilities;
-import com.datamininglab.foundation.ui.UIUtilities.UIAction;
-import com.datamininglab.foundation.ui.UserInterface.MessageType;
-import com.datamininglab.foundation.util.Utilities;
+import com.datamininglab.viz.gui.UIAction;
+import com.datamininglab.viz.gui.UserInterface.MessageType;
+import com.datamininglab.viz.gui.swt.util.ResourceManager;
+import com.datamininglab.viz.gui.swt.util.SWTUtilities;
 
 public class PrescriptionEditor extends Composite implements Editor<Visit, Prescription, Object>, SelectionListener, MRSViewable {
 	private SWTInterface ui;
