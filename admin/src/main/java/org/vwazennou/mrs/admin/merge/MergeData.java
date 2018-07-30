@@ -73,7 +73,10 @@ class MergeData {
 			iter.advance();
 			
 			MRSMergable inMaster = master.existingData.get(iter.key());
-			if (iter.value().getVersion() > inMaster.getVersion()) {
+			if (inMaster == null) {
+				LogContext.info("Existing %s from client %s not found in master data; treating as new", iter.value(), parent.getClient());
+				newData.put(iter.key(), iter.value());
+			} else if (iter.value().getVersion() > inMaster.getVersion()) {
 				LogContext.info("%s was edited by client %s", inMaster, parent.getClient());
 				MergeUtil.copy(table.getTableClass(), iter.value(), inMaster);
 			}

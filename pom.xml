@@ -2,9 +2,9 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<groupId>com.datamininglab</groupId>
+		<groupId>com.elderresearch</groupId>
 		<artifactId>eri-application-base</artifactId>
-		<version>3.0.2</version>
+		<version>3.4.3</version>
 	</parent>
 
 	<groupId>org.vwazennou</groupId>
